@@ -17,7 +17,7 @@ class DB {
 	        $database=$db_cfg["database"];
 			try {
 				self::$instance = new PDO("mysql:host=".$host.';dbname='.$database, $user, $pass);
-				self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);  
+				self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
 				self::$instance->query('SET NAMES utf8');
 				self::$instance->query('SET CHARACTER SET utf8');
 				echo "instancio<br>";
