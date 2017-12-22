@@ -1,0 +1,79 @@
+
+		/**
+		 * filtro de autenticacion de sesiones
+		 */
+		$router->filter('auth', function(){    
+		    if(!isset($_SESSION['user'])){
+		    	echo 'no estas logeado';
+		        return false;
+		    }
+		});
+
+		$router->get('/', function() {
+		    return 'raiz';
+		});
+
+		/**
+		 * Peticion GET
+		 */
+		$router->get('/example1', function() {
+		    return '/example1 GET';
+		});
+
+		/**
+		 * Peticion POST
+		 */
+		$router->post('/example1', function() {
+		    return '/example1 POST';
+		});
+
+		/**
+		 * Peticion DELETE
+		 */
+		$router->delete('/example1', function() {
+		    return '/example1 DELETE';
+		});
+
+
+		/**
+		 * Peticion ANY responde a cualquie verbo HTTP
+		 */
+		$router->any('/example2', function() {
+		    return '/example2 any';
+		});
+
+		/**
+		 * Peticion GET con parametros
+		 */
+		$router->get('/example3/{id}', function($id) {
+		    return '/example3 GET id = ' .$id;
+		});
+
+		/**
+		 * Peticion GET require autenticacion de sesion
+		 */
+		$router->get('/example4', function() {
+		    return '/example4 GET';
+		});
+
+		/**
+		 * Grupo de rutas
+		 * @prefix es el prefijo de la ruta /admin
+		 */
+		$router->group(['prefix' => 'admin'], function($router){
+			/**
+			 *se especifica la ruta que sigue al prefijo
+			 * ejemplo http://localhost/composer/admin/pages
+			 */
+		    $router->get('pages', function(){
+		        return 'page management';
+		    });
+
+		    $router->get('products', function(){
+		        return 'product management';
+		    });
+
+		    $router->get('orders', function(){
+		        return 'order management';
+		    });
+		}); 
