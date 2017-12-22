@@ -2,7 +2,7 @@
 
 require 'app/model/tutorModel.php';
 require 'app/dto/tutorDTO.php';
-require 'app/dto/experienciaLaboral.php';
+require 'app/dto/experienciaLaboralDTO.php';
 require_once 'app/utility/util.php';
 
 /**
