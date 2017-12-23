@@ -34,7 +34,6 @@ class ExperienciaLaboralDAO{
 				'direccion' => $experienciaLaboralDTO->getDireccion(),
 				'estado_contrato' => $experienciaLaboralDTO->getEstadoContrato()		
 			]);
-			//echo $prepared->debugDumpParams().'<br>';
 
 			if($prepared->rowCount() > 0){
 				return 0;
