@@ -5,15 +5,18 @@
 */
 require_once 'app/model/matriculaModel.php';
 require_once 'app/dto/matriculaDTO.php';
+require_once 'app/model/alumnoModel.php';
 
 class MatriculaController 
 {
 	
 	private $matriculaModel;
+	private $alumnoModel;
 
 	function __construct()
 	{
 		$this->matriculaModel = new MatriculaModel();
+		$this->alumnoModel = new alumnoModel();
 	}
 
 	
@@ -78,17 +81,6 @@ class MatriculaController
 
 					echo "Son de acuerdo al tipo (OK)<br>";
 					
-					/*
-					$valores = explode('-', $fecha_matricula);
-					echo "MES: ".$valores[1]."DIA: ".$valores[2]." AÑO: ".$valores[0]." <br>resultado: ".checkdate($valores[1], $valores[2], $valores[0]);
-					if(count($valores) == 3 && checkdate($valores[1], $valores[2], $valores[0])){
-							echo "Fecha validad (OK)<br>";
-							return true;
-	    			}
-	    					echo "Fecha No validad (ERROR)<br>";
-							return false;
-							*/
-							return true;
 			}
 
 			return false;
@@ -99,10 +91,35 @@ class MatriculaController
 	
 
 
+	public function verificarExistenciaMatriculaAlumno($tipo_documento , $numero_documento )
+	{
+		$jsondata = array();
+		$jsondata = $this->matriculaModel->verificarExistenciaMatriculaAlumno($tipo_documento , $numero_documento );
+
+		if($jsondata['SUCCES'] == -1){
+			echo "Error en la verificacion ".$jsondata['error'];
+			return $jsondata;
+		}
+			
+		if($jsondata['SUCCES'] == 1){
+			echo "El alumno presenta matricula activa en la institucion ".$jsondata['establecimiento_educativo'];
+		}elseif($jsondata['SUCCES'] == 0){
+			echo "No existe una matricula asociada al alumno en este año";
+		}
+
+		$alumnoDTO = new AlumnoDTO();
+		$alumnoDTO->setTipo_documento($tipo_documento); 
+		$alumnoDTO->setNumero_documento($numero_documento);
+		$jsondata['alumno'] = $this->alumnoModel->consultarAlumno($alumnoDTO);
+		var_dump($jsondata);
+
+	}
+
 	public function consultarMatricula()
 	{
 
 	}
+
 
 	
 }

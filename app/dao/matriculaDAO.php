@@ -75,4 +75,44 @@ class MatriculaDAO
 
 	
 	}
+
+
+	public function verificarExistenciaMatriculaAlumno($tipo_documento , $numero_documento)
+	{
+		try {
+			
+		
+		$db = DB::getInstance();
+		$jsondata = array();
+		//Se tomoa el año del sistema como referencia
+		$ano_reporte = date("Y");
+		$statement ="SELECT `tipo_documento`, `numero_documento` , `establecimiento_educativo` FROM alumnos JOIN matricula ON (alumnos"."."."alumno_id = matricula"."."."alumno_id) JOIN instituciones ON (matricula.institucion_id = instituciones.institucion_id) WHERE tipo_documento = :tipo_documento AND  numero_documento= :numero_documento AND ano_reporte = :ano_reporte";
+
+			$prepared = $db->prepare($statement);
+			$prepared->execute([
+				'tipo_documento' => $tipo_documento,
+				'numero_documento' => $numero_documento,
+				'ano_reporte' => $ano_reporte
+			]);
+			
+			if($prepared->rowCount()>0){
+				//Encontro un registro de maticula en una institucion educativa
+				$datos = $prepared->fetch(PDO::FETCH_ASSOC);
+				//Guarda el nombre del establecimiento edcativo donde esta matriculado el alumno
+				$jsondata['establecimiento_educativo'] = $datos['establecimiento_educativo'];
+				$jsondata['SUCCES'] = 1;
+				return $jsondata;
+				
+			}
+			
+			$jsondata['SUCCES'] = 0;
+			return $jsondata;
+
+		} catch (PDOException $e) {
+			$jsondata['SUCCES'] = -1;
+			$jsondata['error'] = $e->getMessage();
+			return $jsondata;
+			
+		}
+	}
 }

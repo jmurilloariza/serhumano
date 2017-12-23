@@ -61,11 +61,19 @@ class CuentaDAO
 				$datos = $prepared->fetch(PDO::FETCH_ASSOC);
 				echo "get Password: ".$cuentaDTO->getPassword();
 				echo "<br>.password encrip: ".$datos['password'];
+
 				if (@password_verify($cuentaDTO->getPassword(), $datos['password'])) {
 						$_SESSION['tipo_cuenta'] = $datos['tipo_cuenta'];
 						$_SESSION['correo'] = $cuentaDTO->getEmail();
+						session_set_cookie_params(2*60*60, '/', '', false, true);
+						//Obtener el id Uusuario y agregarlo  a la session
+						$this->obtenerDatosUsuario( $datos['tipo_cuenta'] , $cuentaDTO->getEmail());
+						//Obtener los nombres de los modulos asociados al usuario y aññadirlos a session
+						$this->obtenerModulos($cuentaDTO->getEmail());
 						//Coinciden las credenciales
-						$jsondata['success']= 1;
+						//ini_set('session.cookie_lifetime', time() + (60*60*24));
+
+
 						echo "ACCESO VALIDO";
 		  		}else{
 		  			//datos de acceso invalidos
@@ -105,13 +113,64 @@ class CuentaDAO
 					$modulos[$i] = $row['modulo'];
 					echo $modulos[$i].'<br>';
 					$i++;
-			 }
+			 	}
+			 	$_SESSION['modulos'] = $modulos;
+
 	  		}else{
 	  			//No se encontro cuenta asociada al correo
 	  			echo "NO SE ENCONTRARON MODULOS";
 			}
 
 		} catch ( PDOException   $e ) {
+			echo $e->getMessage();
+
+		}
+	}
+
+	private function obtenerDatosUsuario($tipo_cuenta , $email)
+	{
+			try{
+			$db = DB::getInstance();
+
+			if($tipo_cuenta == "alumno"){
+				echo "Es de TIPO ALUMNO";
+				echo "<br>emial ".$email."<br>";
+				$statement ="SELECT `alumno_id` FROM `alumnos` WHERE email = :email" ;
+				$prepared = $db->prepare($statement);
+				$prepared->execute([
+				'email'=> $email
+				]);
+				if($prepared->rowCount()>0){
+					$datos = $prepared->fetch(PDO::FETCH_ASSOC);
+					$_SESSION['usuario_id'] = $datos['alumno_id'];
+			  	}else{
+			  			echo " NO se encontro un usuario asociado al email";
+					}
+
+			}elseif ($tipo_cuenta == "tutor") {
+
+				$statement ="SELECT `tutor_id` FROM `tutores` WHERE email = :email" ;
+				$prepared = $db->prepare($statement);
+				$prepared->execute([
+				'email'=> $email
+				]);
+				if($prepared->rowCount()>0){
+					$_SESSION['usuario_id'] = $datos['tutor_id'];
+			  		}else{
+			  			echo "NO se encontro un usuario asociado al email";
+					}
+
+			}elseif ($tipo_cuenta == "telento humano") {
+				$statement ="" ;
+
+
+			}else{
+				$statement ="" ;
+
+
+			}
+
+		} catch ( Exception  $e ) {
 			echo $e->getMessage();
 
 		}

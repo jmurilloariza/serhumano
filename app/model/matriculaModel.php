@@ -73,6 +73,11 @@ class MatriculaModel
 		
 	}
 
+	public function verificarExistenciaMatriculaAlumno($tipo_documento , $numero_documento )
+	{
+		return $this->matriculaDAO->verificarExistenciaMatriculaAlumno($tipo_documento , $numero_documento) ;
+	}
+
 
 	
 
