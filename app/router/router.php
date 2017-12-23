@@ -1,8 +1,9 @@
 <?php 
 
 require 'vendor/autoload.php';
-require '/../controller/controllerView.php';
-require 'app/controller/tutorController.php';
+require 'app/controller/controllerView.php';
+require 'app/controller/alumnoController.php';
+require 'app/controller/matriculaController.php';
 
 use Phroute\Phroute\RouteCollector;
 
@@ -15,14 +16,12 @@ class Router{
 	private $alumnoController;
 	private $matriculaController;
 	private $controllerView;
-	private $tutorController;
 
 	function __construct() {
 		$this->controllerView = new ControllerView();
-		$this->tutorController = new TutorController();
-	}
-
-	
+		$this->alumnoController = new AlumnoController();
+		$this->matriculaController = new MatriculaController();
+	}	
 
 	public function router(){
 		#http://localhost/serhumano/
@@ -48,25 +47,42 @@ class Router{
 		        return false;
 		    }
 		});
-
-		$router->post('/prueba', function(){
+		/**
+		 * Peticiones POST
+		*/
+		$router->post('/matricula/registrarAlumno', function(){			
 			$array = array();
-			array_push($array, 'prueba');
-			echo json_encode($array);
-			return '/prueba';
+			$array['nombre'] = 'Gerson';
+			
+			$res_reg_alumno = $this->alumnoController->registrarAlumno($_POST['tipo_documento'],$_POST['numero_documento'],$_POST['lugar_exp_mun'],$_POST['lugar_exp_depto'],$_POST['apellido_1'],$_POST['apellido_2'],$_POST['nombre_1'],$_POST['nombre_2'],$_POST['fecha_nac'],$_POST['lugar_nac_mun'],$_POST['lugar_nac_depto'],$_POST['genero'],$_POST['discapacidad'],$_POST['cap_excepcionales'],$_POST['anexo_docume'],$_POST['email']);
+
+			return  json_encode($array);
 		});
 
+		$router->post('/matricula/registrarMatricula', function(){
+			$array = array();
+			$array['rta'] = 'Registro Exitoso';
+			
+			$res_reg_matricula = $this->matriculaController->registrarMatricula($_POST['alumno_id'],$_POST['institucion_id'],1,$_POST['jornada'],$_POST['grado'],$_POST['grupo_curso'],$_POST['subsidiado'],$_POST['repitente'],$_POST['nie'],$_POST['saaa'],$_POST['cafaa'],$_POST['zra'],$_POST['amcf'],$_POST['bvfp'],$_POST['bhdmcf'],$_POST['bhn'],$_POST['pvc'],$_POST['ume'],$_POST['ude'],$_POST['sector_privado'],$_POST['pom'],$_POST['etnia'],$_POST['resguardo'],$_POST['sisben'],$_POST['direccion_residencia'],$_POST['telefono'],$_POST['lrm'],$_POST['lrd'],$_POST['estrato'],$_POST['anos_cumplidos'],$_POST['anexo_certif_ante']);
+
+			return  json_encode($array);
+		});
+
+		$router->post('/matricula/registrarHojaVida', function(){
+			$array = array();
+			$array['rta'] = 'Registro Exitoso';
+			
+			$res_reg_HV = $this->matriculaController->registrarMatricula($_POST['nombres'],$_POST['apellido1'],$_POST['apellido2'],$_POST['tipo_doc'],$_POST['numero'],$_POST['sexo'],$_POST['nacionalidad'],$_POST['lbrta_mil_clase'],$_POST['num_lbrta_mil'],$_POST['dm, $fecha_nacim'],$_POST['pais_nacim'],$_POST['depto_nacim'],$_POST['mun_nacim'],$_POST['direccion_corresp'],$_POST['pais_corresp'],$_POST['depto_corres'],$_POST['mun_corresp'],$_POST['telefono'],$_POST['email'],$_POST['ultm_grd_aprob'],$_POST['titulo_obtenido'],$_POST['fecha_grado'],$_POST['modalidad_academica_i'],$_POST['numero_semest_aprob'],$_POST['graduado'],$_POST['estudio_titulo_obte'],$_POST['fecha_terminacion'],$_POST['num_tarjeta_prof'],$_POST['empresa_entidad'],$_POST['tipo'],$_POST['pais'],$_POST['departamento'],$_POST['municipio'],$_POST['correo_entidad'],$_POST['telefono'],$_POST['fecha_ingreso'],$_POST['fecha_retiro'],$_POST['cargo_contratado'],$_POST['dependencia'],$_POST['direccion'],$_POST['estado_contrato']);
+
+			return  json_encode($array);
+		});
+
+		/**
+		 * Peticiones GET
+		*/
 		$router->get('/home', function (){
 			$modulos = null;
 			return $this->controllerView->render('home.html', $modulos);
-		});
-
-		$router->get('/tutor', function() {
-			return $this->tutorController->registrarTutor('', '1',
-				'1', '1', '1', '1', '1', '1',
-				'1', '1', '2017-12-12', '1', '1',
-				'1', '1', '1', '1', '1',
-				'1', '1', '1', 'titulo', '2017-12-12');
 		});
 
 		$router->get('/login', function(){
@@ -75,14 +91,14 @@ class Router{
 
 		$router->get('/', function() {
 		    return $this->controllerView->showView('home.html');
-		}, ['before' => 'auth']);
+		}/*, ['before' => 'auth']*/);
 
 		$dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
 		try {
 			$response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $route);
 			echo $response;
 		} catch (Exception $e) {
-			echo '404 not found';
+			echo $e->getMessage();
 		}
 
 	}

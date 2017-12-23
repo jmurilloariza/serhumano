@@ -1,0 +1,65 @@
+.m-brand.m-brand--skin-dark {
+    background: #ffffff;
+}
+
+.m-aside-left.m-aside-left--skin-dark {
+    background-color: rgba(43, 145, 126, 1);
+}
+
+#footer_index{
+	margin-left: 0px;
+}
+
+#body_index{
+ 	padding-left: 0px;
+}
+
+img{
+	width: 100%;
+}
+
+#imagen_footer{
+	width: 180px;
+}
+
+.m-footer{
+	height: 90px;
+}
+.m-header {
+    height: 100px;
+}
+.container{
+	padding-left: 150px;
+	padding-right: 150px;
+}
+
+.thead-dark{
+	background: rgba(43, 145, 126, 1);
+	border-color: grey;
+	color: white;
+}
+
+.btn-focus{
+	color: #fff;
+    background-color: rgba(43, 145, 126, 1);
+    border-color: rgba(43, 145, 126, 1);
+}
+
+.m-messenger .m-messenger__messages .m-messenger__message.m-messenger__message--out .m-messenger__message-content {
+    background: rgba(43, 145, 126, 1);
+}
+
+.m-messenger.m-messenger.m-messenger--message-arrow .m-messenger__message.m-messenger__message--out .m-messenger__message-arrow {
+    color: rgba(43, 145, 126, 1);
+}
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.m-portlet .m-portlet__head .m-portlet__head-icon{
+  color: rgba(43, 145, 126, 1);
+ }
