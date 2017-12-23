@@ -1,0 +1,31 @@
+.bordes{
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+.bordeVertical{	
+	border-right: 1px solid black;	
+}
+.bordeSuperior{	
+	border-top: 1px solid black;	
+}
+.input-mostrar{
+	border: none;
+}
+.linea{
+	border-bottom: 1px solid black; 
+}
+.date_libreta{
+	width: 15%;
+}
+.table-bordered2 {
+	margin-top: 20px;
+	margin-bottom: 20px;	
+}
+.table-bordered th, .table-bordered td {
+    border: 1px solid #000000;
+    padding: 5px;
+}
+.input_eduSuperior{
+	width: 100%;
+}

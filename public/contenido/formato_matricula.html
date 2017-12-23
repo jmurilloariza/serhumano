@@ -1,0 +1,517 @@
+<!-- BEGIN: Subheader -->
+<div class="m-subheader ">
+	<div class="d-flex align-items-center">
+		<div class="mr-auto">
+			<h3 class="m-subheader__title ">
+				Matricular estudiante
+			</h3>
+		</div>							
+	</div>
+</div>
+<!-- END: Subheader -->
+<div class="col-xl-12">
+	<div class="m-portlet m-portlet--mobile ">		
+		<div class="m-portlet__body">						
+			<div class="row">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-10">
+					<div class="row col-sm-12">
+						<h3>							
+							<span>CONSULTAR ESTUDIANTE</span>
+						</h3>
+					</div>					
+					<div class="row col-sm-12 bordeSuperior">						
+						<div class="col-sm-3">							
+							<label>Tipo Documento</label>
+							<select class="form-control m-input input_eduSuperior">
+								<option value="1">CC</option>
+								<option value="1">RC</option>
+								<option value="1">TI</option>
+								<option value="1">CE</option>
+							</select>	
+						</div>
+						<div class="col-sm-6">
+							<label>Número de documento</label>
+							<input class="form-control m-input input_eduSuperior" type="number" name="num_documento">	
+						</div>
+						<div class="col-sm-3">
+							<label></label>
+							<button class="btn m-btn--pill btn-warning input_eduSuperior">Verificar</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-1"></div>
+			</div>
+			<br><br>
+			<form id="myForm" name="myForm" method="post" rol="form" onsubmit="return registrarMatricula();">
+				<input type="hidden" name='alumno_id' value="10">
+				<div class="row">
+					<div class="col-sm-1"></div>
+					<div class="col-sm-10">
+						<div class="row col-sm-12 bordes bordeSuperior thead-dark">
+							<h3>							
+								<span>DATOS DE IDENTIFICACION</span>
+							</h3>
+						</div>
+						<div class="row col-sm-12 bordes">
+							<div class="col-sm-3 bordeVertical">
+								<label>Tipo de documento</label>
+								<select class="input-mostrar form-control m-input" name="">
+									<option value="1">CC</option>
+									<option value="1">RC</option>
+									<option value="1">TI</option>
+									<option value="1">CE</option>
+								</select>
+							</div>
+							<div class="col-sm-3 bordeVertical">
+								<label>Número de documento</label>
+								<input class="input-mostrar input_eduSuperior" type="number" name="">
+							</div>
+							<div class="col-sm-3 bordeVertical">
+								<label>Departamento de expedición</label>								
+								<select class="input-mostrar form-control m-input" id="" name="">
+									<option value="1">Norte De Santander</option>
+									<option value="1">Santander</option>
+									<option value="1">Cundinamarca</option>
+									<option value="1">Cauca</option>
+									<option value="1">Cesar</option>
+								</select>
+							</div>
+							<div class="col-sm-3">
+								<label>Municipio de expedición</label>								
+								<select class="input-mostrar form-control m-input" id="" name="">
+									<option value="5">Cucuta</option>
+									<option value="5">Los Patios</option>
+									<option value="5">Chinacota</option>
+									<option value="5">Bochalema</option>
+									<option value="5">Toledo</option>
+								</select>
+							</div>
+						</div>
+						<div class="row col-sm-12 bordes">
+							<div class="col-sm-3 bordeVertical">
+								<label>Primer Apellido</label>
+								<input class="input-mostrar input_eduSuperior" type="text" name="">
+							</div>
+							<div class="col-sm-3 bordeVertical">
+								<label>Segundo Apellido</label>
+								<input class="input-mostrar input_eduSuperior" type="text" name="">
+							</div>
+							<div class="col-sm-3 bordeVertical">
+								<label>Primer Nombre</label>
+								<input class="input-mostrar input_eduSuperior" type="text" name="">
+							</div>
+							<div class="col-sm-3">
+								<label>Segundo Nombre</label>
+								<input class="input-mostrar input_eduSuperior" type="text" name="">
+							</div>
+						</div>										
+						<div class="row col-sm-12 bordes">
+							<div class="col-sm-6 bordeVertical">
+								<label>Direccion de residencia</label>
+								<input class="input-mostrar input_eduSuperior" type="text" name="direccion_residencia">
+							</div>
+							<div class="col-sm-3 bordeVertical">
+								<label>Telefono</label>
+								<input class="input-mostrar input_eduSuperior" type="text" name="telefono">
+							</div>
+							<div class="col-sm-3">
+								<label>Proviene de otro municipio</label>								
+								<select class="input-mostrar form-control m-input" id="" name="pom">
+									<option value="S">SI</option>
+									<option value="N">NO</option>
+								</select>
+							</div>
+						</div>
+						<div class="row col-sm-12 bordes">
+							<div class="col-sm-4 bordeVertical">
+								<label>Zona de residencia</label>
+								<select class="input-mostrar form-control m-input" id="" name="zra">
+									<option value="1">URBANO</option>
+									<option value="2">RURAL</option>
+								</select>
+							</div>
+							<div class="col-sm-4 bordeVertical">
+								<label>Departamento de residencia</label>								
+								<select class="input-mostrar form-control m-input" id="" name="lrd">
+									<option value="1">Norte De Santander</option>
+									<option value="1">Santander</option>
+									<option value="1">Cundinamarca</option>
+									<option value="1">Cauca</option>
+									<option value="1">Cesar</option>
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label>Municipio de residencia</label>								
+								<select class="input-mostrar form-control m-input" id="" name="lrm">
+									<option value="5">Cucuta</option>
+									<option value="5">Los Patios</option>
+									<option value="5">Chinacota</option>
+									<option value="5">Bochalema</option>
+									<option value="5">Toledo</option>
+								</select>
+							</div>						
+						</div>
+						<div class="row col-sm-12 bordes">
+							<div class="col-sm-4 bordeVertical">
+								<label>Departamento de nacimiento</label>								
+								<select class="input-mostrar form-control m-input" id="" name="">
+									<option value="1">Norte De Santander</option>
+									<option value="1">Santander</option>
+									<option value="1">Cundinamarca</option>
+									<option value="1">Cauca</option>
+									<option value="1">Cesar</option>
+								</select>
+							</div>
+							<div class="col-sm-4 bordeVertical">
+								<label>Municipio de nacimiento</label>								
+								<select class="input-mostrar form-control m-input" id="" name="">
+									<option value="5">Cucuta</option>
+									<option value="5">Los Patios</option>
+									<option value="5">Chinacota</option>
+									<option value="5">Bochalema</option>
+									<option value="5">Toledo</option>
+								</select>
+							</div>
+							<div class="col-sm-3 bordeVertical">
+								<label>Fecha de nacimiento</label>
+								<input class="input-mostrar input_eduSuperior" type="date" name="">
+							</div>
+							<div class="col-sm-1">
+								<label>Edad</label>
+								<input class="input-mostrar input_eduSuperior" type="number" name="anos_cumplidos">
+							</div>
+						</div>
+						<div class="row col-sm-12 bordes">
+							<div class="col-sm-4 bordeVertical">
+								<label>Genero</label>								
+								<select class="input-mostrar form-control m-input" name="">
+									<option value="M">Masculino</option>
+									<option value="F">Femenino</option>									
+								</select>
+							</div>
+							<div class="col-sm-4 bordeVertical">
+								<label>Discapacidad</label>
+								<!--<input class="input-mostrar input_eduSuperior" type="text" name="">-->
+								<select class="input-mostrar form-control m-input" name="discapacidad">
+									<option value="1">Sordera Profunda</option>
+									<option value="2">Hipoacusia o Baja audición</option>
+									<option value="3">Baja visión diagnosticada</option>
+									<option value="4">Ceguera</option>
+									<option value="5">Parálisis cerebral</option>
+									<option value="6">Lesión neuromuscular</option>
+									<option value="7">Autismo</option>
+									<option value="8">Deficiencia cognitiva (Retardo Mental)</option>
+									<option value="9">Síndrome de Down</option>
+									<option value="10">Múltiple</option>
+									<option value="99">No aplica</option>
+								</select>								
+							</div>
+							<div class="col-sm-4">
+								<label>Capacidad Excepcional</label>								
+								<select class="input-mostrar form-control m-input" name="cap_excepcionales">
+									<option value="1">Superdotado</option>
+									<option value="2">Con talento científico</option>
+									<option value="3">Con talento tecnológico</option>
+									<option value="4">Con talento subjetivo</option>
+									<option value="9">No Aplica</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-1"></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-1"></div>
+					<div class="col-sm-10">
+						<div class="row col-sm-12 bordes thead-dark">						
+							<h3>							
+								<span>INFORMACION ACADEMICA</span>
+							</h3>
+						</div>
+						<div class="row col-sm-12 bordes">
+							<div class="col-sm-12">
+								<label>Institución</label>
+								<select class="input-mostrar form-control m-input" name="institucion_id">
+									<option value="1">Santos Apostoles</option>
+									<option value="1">Simon Bolivar</option>
+									<option value="1">Fe y Alegria</option>
+									<option value="1">Primero de Mayo</option>									
+								</select>
+							</div>
+						</div>
+						<div class="row col-sm-12 bordes">							
+							<div class="col-sm-4 bordeVertical">
+								<label>Jornada</label>
+								<select class="input-mostrar form-control m-input" name="jornada">
+									<option value="1">Completa</option>
+									<option value="2">Mañana</option>
+									<option value="3">Tarde</option>
+									<option value="4">Nocturna</option>
+									<option value="5">Fin de semana</option>
+								</select>
+							</div>
+							<div class="col-sm-4 bordeVertical">
+								<label>Grado</label>
+								<select class="input-mostrar form-control m-input" name="grado">
+									<option value="22">4 y 5</option>
+									<option value="23">6 y 7</option>
+									<option value="24">8 y 9</option>
+									<option value="25">10</option>
+									<option value="26">11</option>
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label>Grupo curso</label>
+								<input class="input-mostrar input_eduSuperior" type="text" name="grupo_curso">
+							</div>						
+						</div>
+						<div class="row col-sm-12 bordes">
+							<div class="col-sm-2 bordeVertical">
+								<label>Repitente</label>								
+								<select class="input-mostrar form-control m-input" id="" name="repitente">
+									<option value="S">SI</option>
+									<option value="N">NO</option>									
+								</select>
+							</div>
+							<div class="col-sm-2 bordeVertical">
+								<label>Subsidiado</label>								
+								<select class="input-mostrar form-control m-input" id="" name="subsidiado">
+									<option value="S">SI</option>
+									<option value="N">NO</option>									
+								</select>
+							</div>
+							<div class="col-sm-4 bordeVertical">
+								<label>Nuevo en intitucion educativa</label>								
+								<select class="input-mostrar form-control m-input" id="" name="nie">
+									<option value="S">SI</option>
+									<option value="N">NO</option>									
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label>Proviene sector privado</label>								
+								<select class="input-mostrar form-control m-input" id="" name="sector_privado">
+									<option value="S">SI</option>
+									<option value="N">NO</option>									
+								</select>
+							</div>
+						</div>
+						<div class="row col-sm-12 bordes">
+							<div class="col-sm-6 bordeVertical">
+								<label>Situaciòn academica año anterior</label>
+								<select class="input-mostrar form-control m-input" id="" name="saaa">
+									<option value="0">No estudio vigencia anterior</option>
+									<option value="1">Aprobó</option>
+									<option value="2">Reprobó</option>
+									<option value="8">No culminó estudios</option>
+								</select>
+							</div>
+							<div class="col-sm-6">
+								<label>Condicion alumno al finalizar año anterior</label>
+								<select class="input-mostrar form-control m-input" id="" name="cafaa">
+									<option value="3">Desertó</option>
+									<option value="5">Traslado a otra institucion educativa</option>
+									<option value="9">No aplica</option>									
+								</select>
+							</div>							
+						</div>						
+					</div>
+					<div class="col-sm-1"></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-1"></div>
+					<div class="col-sm-10">
+						<div class="row col-sm-12 bordes thead-dark">						
+							<h3>							
+								<span>SITUACION SOCIO ECONOMICA</span>
+							</h3>
+						</div>
+						<div class="row col-sm-12 bordes">
+							<div class="col-sm-2 bordeVertical">
+								<label>Sisben</label>								
+								<select class="input-mostrar form-control m-input" id="" name="sisben">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="9">No aplica</option>									
+								</select>
+							</div>
+							
+							<div class="col-sm-4 bordeVertical">
+								<label>Alumno  Madre Cabeza de Familia</label>								
+								<select class="input-mostrar form-control m-input" id="" name="amcf">
+									<option value="S">SI</option>
+									<option value="N">NO</option>									
+								</select>
+							</div>
+							<div class="col-sm-6">
+								<label>Beneficiario Hijos dependientes de Madre Cabeza de Familia</label>
+								<select class="input-mostrar form-control m-input" id="" name="bhdmcf">
+									<option value="S">SI</option>
+									<option value="N">NO</option>									
+								</select>
+							</div>													
+						</div>
+						<div class="row col-sm-12 bordes">													
+							<div class="col-sm-2 bordeVertical">
+								<label>Estrato</label>
+								<input class="input-mostrar input_eduSuperior" type="number" name="estrato">
+							</div>														
+							<div class="col-sm-5 bordeVertical">
+								<label>Beneficiario Veteranos de la Fuerza Pública</label>								
+								<select class="input-mostrar form-control m-input" id="" name="bvfp">
+									<option value="S">SI</option>
+									<option value="N">NO</option>									
+								</select>
+							</div>
+							<div class="col-sm-5">
+								<label>Beneficiario Héroes de la Nación</label>								
+								<select class="input-mostrar form-control m-input" id="" name="bhn">
+									<option value="S">SI</option>
+									<option value="N">NO</option>									
+								</select>
+							</div>
+						</div>											
+					</div>
+					<div class="col-sm-1"></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-1"></div>
+					<div class="col-sm-10">
+						<div class="row col-sm-12 bordes thead-dark">						
+							<h3>							
+								<span>TERRITORORIALIDAD</span>
+							</h3>
+						</div>
+						<div class="row col-sm-12 bordes">
+							<div class="col-sm-4 bordeVertical">
+								<label>Poblacion victima conflito</label>
+								<select class="input-mostrar form-control m-input" id="" name="pvc">
+									<option value="1">En situacion de desplazamineto</option>
+									<option value="2">Desvinculados de grupos armados</option>
+									<option value="3">Hijos de adultos desmovilizados</option>
+									<option value="9">No aplica</option>
+								</select>
+							</div>
+							<div class="col-sm-4 bordeVertical">
+								<label>Etnia</label>
+								<select class="input-mostrar form-control m-input" id="" name="etnia">
+									<option value="70">UWA</option>
+									<option value="08">Bari</option>
+									<option value="00">No aplica</option>
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label>Resguardo</label>
+								<select class="input-mostrar form-control m-input" id="" name="resguardo">
+									<option value="uwa">UWA</option>
+									<option value="363">Bari</option>
+									<option value="000">No aplica</option>
+								</select>
+							</div>						
+						</div>
+						<div class="row col-sm-12 bordes">
+							<div class="col-sm-6 bordeVertical">
+								<label>Ultimo departamento expulsor</label>								
+								<select class="input-mostrar form-control m-input" id="" name="ude">
+									<option value="1">Norte De Santander</option>
+									<option value="1">Santander</option>
+									<option value="1">Cundinamarca</option>
+									<option value="1">Cauca</option>
+									<option value="1">Cesar</option>
+								</select>
+							</div>						
+							<div class="col-sm-6">
+								<label>Ultimo municipio expulsor</label>								
+								<select class="input-mostrar form-control m-input" id="" name="ume">
+									<option value="5">Cucuta</option>
+									<option value="5">Los Patios</option>
+									<option value="5">Chinacota</option>
+									<option value="5">Bochalema</option>
+									<option value="5">Toledo</option>
+								</select>
+							</div>						
+						</div>										
+					</div>
+					<div class="col-sm-1"></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-1"></div>
+					<div class="col-sm-10">
+						<div class="row m-portlet m-portlet--mobile">
+                            <div class="m-portlet__head">
+                                <div class="m-portlet__head-caption">
+                                    <div class="m-portlet__head-title">
+                                		<h3>
+											<span>6</span>
+											<span>Anexos</span>
+										</h3> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="m-portlet__body bordes bordeSuperior input_eduSuperior">
+                            	<div class="row col-sm-12" style="height: 250px;">
+                            		<div class="col-sm-3">
+                            			<input type="file" name="anexo_certif_ante" id="anexo_certif_ante" class="inputfile" onchange="PreviewImage('anexo_certif_ante','preview-1');">
+                            			<label for="anexo_certif_ante" class="btn m-btn--pill btn-warning input_eduSuperior" style="padding: 5px;">Cargar Certificado de no recuerdo que</label>
+                            			<div id="preview-1"></div>
+                            		</div>                            		
+                            	</div>                            	
+                            </div>
+                        </div>
+					</div>
+					<div class="col-sm-1"></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4">
+						<center>
+							<button type="submit" class="input_eduSuperior btn m-btn--pill btn-warning">Registrar</button>
+						</center>	
+					</div>
+					<div class="col-sm-4"></div>
+				</div>				
+			</form>
+			<div class="row">
+				<div class="col-sm-1"></div>
+				<div id="msn" class="col-sm-10"></div>
+				<div class="col-sm-1"></div>
+			</div>
+		</div>		
+	</div>
+</div>
+
+'alumno_id' XXX
+'institucion_id' 
+'tutor_id'
+'jornada' XXX
+'grado' XXX
+'grupo_curso' XXX
+'subsidiado' XXX
+'repitente' XXX
+'nie' XXX
+'saaa' XXX
+'cafaa' XXX
+'zra' XXX
+'amcf' XXX
+'bvfp' XXX
+'bhdmcf' XXX
+'bhn' XXX
+'pvc' XXX
+'ume' XXX
+'ude' XXX
+'sector_privado' XXX
+'pom' XXX
+'etnia' XXX
+'resguardo' XXX
+'sisben' XXX
+'direccion_residencia' XXX
+'telefono'
+'lrm' XXX
+'lrd' XXX
+'estrato' XXX
+'anos_cumplidos' XXX
+'anexo_certif_ante'

@@ -1,0 +1,54 @@
+<!-- BEGIN: Subheader -->
+<div class="m-subheader ">
+    <div class="d-flex align-items-center">
+        <div class="mr-auto">
+            <h3 class="m-subheader__title ">
+                Cargar Archivos
+            </h3>
+        </div>                          
+    </div>
+</div>
+<!-- END: Subheader -->
+<div class="col-xl-12">
+    <div class="m-portlet m-portlet--mobile ">
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">                   
+                    <h3 class="m-portlet__head-text">Cargar Material Didactico</h3>
+                </div>
+            </div>                
+        </div>
+        <div class="m-portlet__body">
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                    <div class="col-sm-12">
+                        <div class="m-portlet m-portlet--mobile ">
+                            <div class="m-portlet__head">
+                                <div class="m-portlet__head-caption">
+                                    <div class="m-portlet__head-title">
+                                        <span class="m-portlet__head-icon">
+                                            <i class="fa fa-upload"></i>
+                                        </span>
+                                        <h3 class="m-portlet__head-text">
+                                            <input id="uploadImage" type="file" class="inputfile" name="file" onchange="PreviewImage();"/>
+                                            <label for="uploadImage" class="btn m-btn--pill btn-warning">Seleccione el archivo</label>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="height: 200px;">
+                                <div id="preview" class="m-portlet__body"></div>    
+                            </div>                            
+                            <div class="m-portlet__foot m-portlet__foot--fit">
+                                <div class="m-form__actions">
+                                    <center><button type="reset" class="btn btn-warning">Cargar</button></center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

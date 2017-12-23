@@ -29,6 +29,9 @@ class TutorDTO{
     private $ultm_grd_aprob; 
     private $titulo_obtenido; 
     private $fecha_grado;
+    private $fecha_dilig;
+    private $ciudad_dilig;
+    private $observaciones;
 
     public function __construct(){
         
@@ -441,6 +444,58 @@ class TutorDTO{
         $this->nacionalidad = $nacionalidad;
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getFechaDilig(){
+        return $this->fecha_dilig;
+    }
+
+    /**
+     * @param mixed $fecha_dilig
+     *
+     * @return self
+     */
+    public function setFechaDilig($fecha_dilig){
+        $this->fecha_dilig = $fecha_dilig;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCiudadDilig(){
+        return $this->ciudad_dilig;
+    }
+
+    /**
+     * @param mixed $ciudad_dilig
+     *
+     * @return self
+     */
+    public function setCiudadDilig($ciudad_dilig){
+        $this->ciudad_dilig = $ciudad_dilig;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getObservaciones(){
+        return $this->observaciones;
+    }
+
+    /**
+     * @param mixed $observaciones
+     *
+     * @return self
+     */
+    public function setObservaciones($observaciones){
+        $this->observaciones = $observaciones;
+        return $this;
+    }
+
 }
 
  ?>
