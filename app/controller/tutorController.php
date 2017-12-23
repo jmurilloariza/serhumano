@@ -33,10 +33,8 @@ class TutorController
 
     public function registrarHojaDeVida($nombres, $apellido1, $apellido2, $tipo_doc, $numero, $sexo, $nacionalidad, $lbrta_mil_clase, $num_lbrta_mil,
                                         $dm, $fecha_nacim, $pais_nacim, $depto_nacim, $mun_nacim, $direccion_corresp, $pais_corresp, $depto_corresp,
-                                        $mun_corresp, $telefono, $email, $ultm_grd_aprob, $titulo_obtenido, $fecha_grado, $modalidad_academica_id,
-                                        $numero_semest_aprob, $graduado, $estudio_titulo_obte, $fecha_terminacion, $num_tarjeta_prof,
-                                        $empresa_entidad, $tipo, $pais, $departamento, $municipio, $correo_entidad, $telefono,
-                                        $fecha_ingreso, $fecha_retiro, $cargo_contratado, $dependencia, $direccion, $estado_contrato){
+                                        $mun_corresp, $telefono, $email, $ultm_grd_aprob, $titulo_obtenido, $fecha_grado,
+                                        $fecha_diligenciamiento, $observacion, $experiencias_laborales, $educaciones_superiores){
 
         $id_tutor = $this->registrarTutor($nombres, $apellido1, $apellido2, $tipo_doc, $numero, $sexo, $nacionalidad, $lbrta_mil_clase, $num_lbrta_mil,
             $dm, $fecha_nacim, $pais_nacim, $depto_nacim, $mun_nacim, $direccion_corresp, $pais_corresp, $depto_corresp,
@@ -46,17 +44,23 @@ class TutorController
             return 'Ha ocurido un error en el registro de los datos personales';
         }
 
-        $resp = $this->registrarEducacionSuperior($modalidad_academica_id, $id_tutor, $numero_semest_aprob, $graduado, $estudio_titulo_obte, $fecha_terminacion, $num_tarjeta_prof);
+        foreach ($educaciones_superiores as $edu) {
+            $resp = $this->registrarEducacionSuperior($edu['modalidad_academica_id'], $id_tutor, $edu['numero_semest_aprob'], $edu['graduado'],
+                $edu['estudio_titulo_obte'], $edu['fecha_terminacion'], $edu['num_tarjeta_prof']);
 
-        if(!is_numeric($resp) || $resp == 1){
-            return 'Ha ocurrido un error en el registro de los datos de educacion superior';
+            if(!is_numeric($resp) || $resp == 1){
+                return 'Ha ocurrido un error en el registro de los datos de educacion superior';
+            }
         }
 
-        $resp = $this->registrarExperienciaLaboral($id_tutor, $empresa_entidad, $tipo, $pais, $departamento, $municipio, $correo_entidad, $telefono,
-            $fecha_ingreso, $fecha_retiro, $cargo_contratado, $dependencia, $direccion, $estado_contrato);
+        foreach ($experiencias_laborales as $exp) {
+            $resp = $this->registrarExperienciaLaboral($id_tutor, $exp['empresa_entidad'], $exp['tipo'], $exp['pais'], $exp['departamento'], $exp['municipio'],
+                $exp['correo_entidad'], $exp['telefono_entidad'], $exp['fecha_ingreso'], $exp['fecha_retiro'], $exp['cargo_contratado'],
+                $exp['dependencia'], $exp['direccion'], $exp['estado_contrato']);
 
-        if(!is_numeric($resp) || $resp == 1){
-            return 'Ha ocurrido un error en el registro de los datos experiencia laboral';
+            if(!is_numeric($resp) || $resp == 1){
+                return 'Ha ocurrido un error en el registro de los datos experiencia laboral';
+            }
         }
 
         return 'Hoja de vida registrada';
