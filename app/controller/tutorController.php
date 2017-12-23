@@ -35,28 +35,10 @@ class TutorController
                                         $dm, $fecha_nacim, $pais_nacim, $depto_nacim, $mun_nacim, $direccion_corresp, $pais_corresp, $depto_corresp,
                                         $mun_corresp, $telefono, $email, $ultm_grd_aprob, $titulo_obtenido, $fecha_grado,
                                         $fecha_diligenciamiento, $observacion, $ciudad_diligenciamiento, $experiencias_laborales, $educaciones_superiores){
-/*
-        echo json_encode($experiencias_laborales);
-
-        echo '<br>';
-        echo '<br>';
-        echo '<br>';
-
-        echo json_encode($educaciones_superiores);
-
-
-        echo '<br>';
-        echo 'educaciones';
-        echo '<br>';
-        echo '<br>';
-        foreach ($educaciones_superiores as $edu) {
-            echo json_encode($edu);
-            echo '<br>';
-        }*/
 
                 $id_tutor = $this->registrarTutor($nombres, $apellido1, $apellido2, $tipo_doc, $numero, $sexo, $nacionalidad, $lbrta_mil_clase, $num_lbrta_mil,
                     $dm, $fecha_nacim, $pais_nacim, $depto_nacim, $mun_nacim, $direccion_corresp, $pais_corresp, $depto_corresp,
-                    $mun_corresp, $telefono, $email, $ultm_grd_aprob, $titulo_obtenido, $fecha_grado);
+                    $mun_corresp, $telefono, $email, $ultm_grd_aprob, $titulo_obtenido, $fecha_grado, $fecha_diligenciamiento, $observacion, $ciudad_diligenciamiento);
 
                 if(!is_numeric($id_tutor) || $id_tutor  < 0){
                     return 'Ha ocurido un error en el registro de los datos personales';
@@ -66,9 +48,13 @@ class TutorController
                     $resp = $this->registrarEducacionSuperior($edu['modalidad_academica_id'], $id_tutor, $edu['numero_semest_aprob'], $edu['graduado'],
                         $edu['estudio_titulo_obte'], $edu['fecha_terminacion'], $edu['num_tarjeta_prof']);
 
+                    echo $resp;
+
                     if(!is_numeric($resp) || $resp == 1){
                         return 'Ha ocurrido un error en el registro de los datos de educacion superior';
                     }
+
+                    $i = $i+1;
                 }
 
                 foreach ($experiencias_laborales as $exp) {
@@ -84,13 +70,14 @@ class TutorController
         return 'Hoja de vida registrada';
     }
 
-    public function registrarTutor($nombres, $apellido1, $apellido2, $tipo_doc, $numero, $sexo, $nacionalidad, $lbrta_mil_clase, $num_lbrta_mil,
+    private function registrarTutor($nombres, $apellido1, $apellido2, $tipo_doc, $numero, $sexo, $nacionalidad, $lbrta_mil_clase, $num_lbrta_mil,
                                    $dm, $fecha_nacim, $pais_nacim, $depto_nacim, $mun_nacim, $direccion_corresp, $pais_corresp, $depto_corresp,
-                                   $mun_corresp, $telefono, $email, $ultm_grd_aprob, $titulo_obtenido, $fecha_grado)
+                                   $mun_corresp, $telefono, $email, $ultm_grd_aprob, $titulo_obtenido, $fecha_grado, $fecha_dilig, $ciudad_dilig, $observaciones)
     {
 
         if(!Util::validarString([$nombres, $apellido1, $tipo_doc, $numero, $sexo, $pais_nacim, $depto_nacim, $mun_nacim,
-                $direccion_corresp, $pais_corresp, $depto_corresp, $mun_corresp, $telefono, $email, $ultm_grd_aprob]) || !Util::validarDate([$fecha_nacim, $fecha_grado])){
+                $direccion_corresp, $pais_corresp, $depto_corresp, $mun_corresp, $telefono, $email, $ultm_grd_aprob, $ciudad_dilig, $observaciones]) ||
+                !Util::validarDate([$fecha_nacim, $fecha_grado, $fecha_dilig])){
             return 'Datos personales Invalidos';
         }
 
@@ -118,6 +105,9 @@ class TutorController
         $dto->setUltmGrdAprob($ultm_grd_aprob);
         $dto->setTituloObtenido($titulo_obtenido);
         $dto->setFechaGrado($fecha_grado);
+        $dto->setFechaDilig(date('Y-m-j').'');
+        $dto->setCiudadDilig($ciudad_dilig);
+        $dto->setObservaciones($observaciones);
 
         $id_tutor =  $this->modelTutor->registrarTutor($dto);
 
@@ -128,7 +118,7 @@ class TutorController
         return $id_tutor;
     }
 
-    public function registrarExperienciaLaboral($tutor, $empresa_entidad, $tipo, $pais, $departamento, $municipio, $correo_entidad, $telefono,
+    private function registrarExperienciaLaboral($tutor, $empresa_entidad, $tipo, $pais, $departamento, $municipio, $correo_entidad, $telefono,
                                                 $fecha_ingreso, $fecha_retiro, $cargo_contratado, $dependencia, $direccion, $estado_contrato){
         if(!Util::validarString([$empresa_entidad, $tipo, $pais, $departamento, $municipio, $telefono, $cargo_contratado, $dependencia, $direccion, $estado_contrato]) ||
             !Util::validarNumber([$tutor]) || !Util::validarDate([$fecha_ingreso, $fecha_retiro])){
@@ -154,7 +144,7 @@ class TutorController
         return $this->modelExperienciaLaboral->registrarExperienciaLaboral($dto);
     }
 
-    public function registrarModalidadAcademica($modalidad){
+    private function registrarModalidadAcademica($modalidad){
         if(!Util::validarString([$modalidad])){
             return 'Datos Invalidos';
         }
@@ -165,7 +155,7 @@ class TutorController
         return $this->modelModalidadAcademica->registrarModalidadAcademica($dto);
     }
 
-    public function registrarEducacionSuperior($modalidad_academica_id, $tutor, $numero_semest_aprob, $graduado, $estudio_titulo_obte, $fecha_terminacion, $num_tarjeta_prof){
+    private function registrarEducacionSuperior($modalidad_academica_id, $tutor, $numero_semest_aprob, $graduado, $estudio_titulo_obte, $fecha_terminacion, $num_tarjeta_prof){
         if(!Util::validarString([$numero_semest_aprob, $graduado, $estudio_titulo_obte, $num_tarjeta_prof]) || !Util::validarNumber([$modalidad_academica_id])
             || !Util::validarDate([$fecha_terminacion])){
             return 'Datos Invalidos';

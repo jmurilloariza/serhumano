@@ -16,8 +16,13 @@ class TutorDAO{
 		$db = DB::getInstance();
 		//var_dump($tutorDTO);
 	
-		$query = "INSERT INTO `tutores` (`nombres`, `apellido1`, `apellido2`, `tipo_doc`, `numero`, `sexo`, `nacionalidad`, `lbrta_mil_clase`, `num_lbrta_mil`, `dm`, `fecha_nacim`, `pais_nacim`, `depto_nacim`, `mun_nacim`, `direccion_corresp`, `pais_corresp`, `depto_corresp`, `mun_corresp`, `telefono`, `email`, `ultm_grd_aprob`, `titulo_obtenido`, `fecha_grado`) VALUES (:nombres, :apellido1, :apellido2, :tipo_doc, :numero, :sexo, :nacionalidad, :lbrta_mil_clase, :num_lbrta_mil, :dm, :fecha_nacim, :pais_nacim, :depto_nacim, :mun_nacim, :direccion_corresp, :pais_corresp, :depto_corresp, :mun_corresp, :telefono, :email, :ultm_grd_aprob, :titulo_obtenido, :fecha_grado);";
-		
+		$query = "INSERT INTO `tutores` (`nombres`, `apellido1`, `apellido2`, `tipo_doc`, `numero`, `sexo`, `nacionalidad`, `lbrta_mil_clase`, 
+                    `num_lbrta_mil`, `dm`, `fecha_nacim`, `pais_nacim`, `depto_nacim`, `mun_nacim`, `direccion_corresp`, `pais_corresp`, `depto_corresp`, 
+                    `mun_corresp`, `telefono`, `email`, `ultm_grd_aprob`, `titulo_obtenido`, `fecha_grado`, `fecha_dilig`, `ciudad_dilig`, `observaciones`) 
+                    VALUES (:nombres, :apellido1, :apellido2, :tipo_doc, :numero, :sexo, :nacionalidad, :lbrta_mil_clase, :num_lbrta_mil, :dm, 
+                    :fecha_nacim, :pais_nacim, :depto_nacim, :mun_nacim, :direccion_corresp, :pais_corresp, :depto_corresp, :mun_corresp, :telefono, 
+                    :email, :ultm_grd_aprob, :titulo_obtenido, :fecha_grado, :fecha_dilig, :ciudad_dilig, :observaciones);";
+
 		$prepared = $db->prepare($query);
         try {
             $prepared->execute([
@@ -43,7 +48,10 @@ class TutorDAO{
                 'email' => $tutorDTO->getEmail(),
                 'ultm_grd_aprob' => $tutorDTO->getUltmGrdAprob(),
                 'titulo_obtenido' => $tutorDTO->getTituloObtenido(),
-                'fecha_grado' => $tutorDTO->getFechaGrado()
+                'fecha_grado' => $tutorDTO->getFechaGrado(),
+                'fecha_dilig' => $tutorDTO->getFechaDilig(),
+                'ciudad_dilig' => $tutorDTO->getCiudadDilig(),
+                'observaciones' => $tutorDTO->getObservaciones()
             ]);
 
             if($prepared->rowCount() > 0){
@@ -52,6 +60,8 @@ class TutorDAO{
                 return -1;
             }
         } catch (PDOException $e) {
+            echo json_encode($prepared->errorInfo());
+            echo $e;
             return -2;
         }
 
