@@ -126,31 +126,33 @@ License: You must have a valid license purchased only from themeforest(the above
 							<span>CONSULTAR ESTUDIANTE</span>
 						</h3>
 					</div>					
-					<div class="row col-sm-12 bordeSuperior">						
-						<div class="col-sm-3">							
-							<label>Tipo Documento</label>
-							<select class="form-control m-input input_eduSuperior">
-								<option value="1">CC</option>
-								<option value="1">RC</option>
-								<option value="1">TI</option>
-								<option value="1">CE</option>
-							</select>	
+					<form id="myForm2" name="myForm2" method="get" rol="form" onsubmit="return validarEstudiante();">
+						<div class="row col-sm-12 bordeSuperior">						
+							<div class="col-sm-3">
+								<label>Tipo Documento</label>
+								<select class="form-control m-input input_eduSuperior" name="tipo_documento_validacion">
+									<option value="1">CC</option>
+									<option value="1">RC</option>
+									<option value="1">TI</option>
+									<option value="1">CE</option>
+								</select>
+							</div>
+							<div class="col-sm-6">
+								<label>Número de documento</label>
+								<input class="form-control m-input input_eduSuperior" type="number" name="numero_documento_validacion">	
+							</div>
+							<div class="col-sm-3">
+								<label></label>
+								<button type="submit" class="input_eduSuperior btn m-btn--pill btn-warning">Verificar</button>
+							</div>
 						</div>
-						<div class="col-sm-6">
-							<label>Número de documento</label>
-							<input class="form-control m-input input_eduSuperior" type="number" name="num_documento">	
-						</div>
-						<div class="col-sm-3">
-							<label></label>
-							<button class="btn m-btn--pill btn-warning input_eduSuperior">Verificar</button>
-						</div>
-					</div>
+					</form>
 				</div>
 				<div class="col-sm-1"></div>
 			</div>
 			<br><br>
 			<form id="myForm" name="myForm" method="post" rol="form" onsubmit="return registrarMatricula();">
-				<input type="hidden" name='alumno_id' value="13">
+				<input type="hidden" name='alumno_id' value="2">
 				<div class="row">
 					<div class="col-sm-1"></div>
 					<div class="col-sm-10">
@@ -162,7 +164,7 @@ License: You must have a valid license purchased only from themeforest(the above
 						<div class="row col-sm-12 bordes">
 							<div class="col-sm-3 bordeVertical">
 								<label>Tipo de documento</label>
-								<select class="input-mostrar form-control m-input" name="">
+								<select class="input-mostrar form-control m-input" name="tipo_documento_rta_consulta">
 									<option value="1">CC</option>
 									<option value="1">RC</option>
 									<option value="1">TI</option>
@@ -171,11 +173,11 @@ License: You must have a valid license purchased only from themeforest(the above
 							</div>
 							<div class="col-sm-3 bordeVertical">
 								<label>Número de documento</label>
-								<input class="input-mostrar input_eduSuperior" type="number" name="">
+								<input class="input-mostrar input_eduSuperior" type="number" name="numero_documento_rta_consulta">
 							</div>
 							<div class="col-sm-3 bordeVertical">
 								<label>Departamento de expedición</label>								
-								<select class="input-mostrar form-control m-input" id="" name="">
+								<select class="input-mostrar form-control m-input" id="" name="departamento_exp_rta_consulta">
 									<option value="1">Norte De Santander</option>
 									<option value="1">Santander</option>
 									<option value="1">Cundinamarca</option>
@@ -185,7 +187,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							</div>
 							<div class="col-sm-3">
 								<label>Municipio de expedición</label>								
-								<select class="input-mostrar form-control m-input" id="" name="">
+								<select class="input-mostrar form-control m-input" id="" name="municipio_exp_rta_consulta">
 									<option value="5">Cucuta</option>
 									<option value="5">Los Patios</option>
 									<option value="5">Chinacota</option>
@@ -197,19 +199,19 @@ License: You must have a valid license purchased only from themeforest(the above
 						<div class="row col-sm-12 bordes">
 							<div class="col-sm-3 bordeVertical">
 								<label>Primer Apellido</label>
-								<input class="input-mostrar input_eduSuperior" type="text" name="">
+								<input class="input-mostrar input_eduSuperior" type="text" name="apellido_1_alumno">
 							</div>
 							<div class="col-sm-3 bordeVertical">
 								<label>Segundo Apellido</label>
-								<input class="input-mostrar input_eduSuperior" type="text" name="">
+								<input class="input-mostrar input_eduSuperior" type="text" name="apellido_2_alumno">
 							</div>
 							<div class="col-sm-3 bordeVertical">
 								<label>Primer Nombre</label>
-								<input class="input-mostrar input_eduSuperior" type="text" name="">
+								<input class="input-mostrar input_eduSuperior" type="text" name="nombre_1_alumno">
 							</div>
 							<div class="col-sm-3">
 								<label>Segundo Nombre</label>
-								<input class="input-mostrar input_eduSuperior" type="text" name="">
+								<input class="input-mostrar input_eduSuperior" type="text" name="nombre_2_alumno">
 							</div>
 						</div>										
 						<div class="row col-sm-12 bordes">

@@ -184,17 +184,30 @@ function registroHojaDeVida(){
     return false;
 }
 
+function validarEstudiante(){   
+    var formulario = document.forms["myForm2"];
+    var informacion="";
+    informacion = armarInformacion(formulario);    
+    console.log(informacion);    
+    ajax('matricula/validarEstudiante', informacion, 'POST');
+    return false;
+}
+
+
 function ajax(url, informacion, tipo){
     $.ajax({
         url : urlBase+url,
         data : informacion,
-        type : tipo,     
+        type : tipo,
         dataType : 'json',     
         success : function(json) {
             $.each(json, function(i, item) {
                 console.log('Item '+item);
             });
-            procesarRespuestaAjax(1, 'La operacion ha sido exitosa');
+            procesarRespuestaAjax(json.respuesta.tipo, json.respuesta.msj);
+            if(json.respuesta.tipo=='Success'){
+                procesarData(json.data, url);
+            }            
         },        
         error : function(xhr, status) {
             console.log(xhr);
@@ -205,12 +218,55 @@ function ajax(url, informacion, tipo){
 }
 
 function procesarRespuestaAjax(color, msn){    
-    if(color==1){
+    if(color=="Success"){
         document.getElementById('msn').innerHTML = '<div class="m-alert m-alert--outline m-alert--outline-2x alert alert-success alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>'+msn+'</div>';
-    }else if(color==2){
-        document.getElementById('msn').innerHTML = '<div class="m-alert m-alert--outline m-alert--outline-2x alert alert-success alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>'+msn+'</div>';
-    }else if(color==3){
+    }else if(color=="Warning"){
         document.getElementById('msn').innerHTML = '<div class="m-alert m-alert--outline m-alert--outline-2x alert alert-warning alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>'+msn+'</div>';
+    }else if(color=="Error"){
+        document.getElementById('msn').innerHTML = '<div class="m-alert m-alert--outline m-alert--outline-2x alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>'+msn+'</div>';
     }
     return false;
 }
+
+function procesarData(data, url){
+    if(url=='matricula/validarEstudiante'){
+        procesarConsultaEstudiante(data);
+    }
+    return false;
+}
+
+function procesarConsultaEstudiante(data){
+    $.each(json, function(i, item) {
+        console.log('Item '+item);
+        document.getElementsByName("tipo_documento_rta_consulta").value= data;
+        document.getElementsByName("numero_documento_rta_consulta").value= data;
+        document.getElementsByName("departamento_exp_rta_consulta").value= data;
+        document.getElementsByName("municipio_exp_rta_consulta").value= data;
+        document.getElementsByName("apellido_1_alumno").value= data;
+        document.getElementsByName("apellido_2_alumno").value= data;
+        document.getElementsByName("nombre_1_alumno").value= data;
+        document.getElementsByName("nombre_2_alumno").value= data;
+        document.getElementsByName("departamento_nac_rta_consulta").value= data;
+        document.getElementsByName("municipio_nac_rta_consulta").value= data;
+        document.getElementsByName("fecha_nac_rta_consulta").value= data;
+        document.getElementsByName("genero_rta_consulta").value= data;
+        document.getElementsByName("discapacidad").value= data;
+        document.getElementsByName("cap_excepcionales").value= data;
+        document.getElementsByName("").value= data;
+        document.getElementsByName("").value= data;
+        document.getElementsByName("").value= data;
+    });   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

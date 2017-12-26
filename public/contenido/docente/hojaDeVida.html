@@ -86,864 +86,870 @@
 				<!-- END: Left Aside -->
 								
 				<div class="m-grid__item m-grid__item--fluid m-wrapper">
-<!-- BEGIN: Subheader -->
-<div class="m-subheader ">
-	<div class="d-flex align-items-center">
-		<div class="mr-auto">
-			<h3 class="m-subheader__title ">
-				Hoja de vida
-			</h3>
-		</div>							
-	</div>
-</div>
-<!-- END: Subheader -->
-<div class="col-xl-12">
-	<div class="m-portlet m-portlet--mobile ">
-		<div class="m-portlet__body">
-			<div class="row col-sm-12">
-				<div class="col-sm-1"></div>
-				<div class="row col-sm-10">
-					<center>
-						<table class="table-bordered table-bordered2 input_eduSuperior">
-							<thead>
-								<tr>
-									<th rowspan="3" style="width: 25%;"><img src="public/assets/demo/demo3/media/img/logo/logo_1.png"></th>
-									<th><center><h3>CORPORACION PROYECTO SER HUMANO</h3></th></center>
-									<th rowspan="2"><h3>GTH-F-02</h3></th>
-								</tr>
-								<tr>
-									<td><center><h3>GESTION DE TALENTO HUMANO</h3></center></td>
-								</tr>
-								<tr>
-									<td><center><h3>Formato Hoja de Vida</h3></center></td>
-									<td><h3>Versión 02</h3></td>
-								</tr>
-							</thead>
-							<tbody>								
-							</tbody>
-						</table>
-					</center>
-				</div>
-				<div class="col-sm-1"></div>
-			</div>
-			<form id="myForm" name="myForm" method="post" rol="form" onsubmit="return registroHojaDeVida();">
-				<br>
-				<!--Primeara Parte-->
-				<div class="row col-sm-12">
-					<div class="row col-sm-12">
-						<div class="col-sm-1"></div>					
-						<div class="col-sm-10">
-							<h3>
-								<span>1</span>
-								<span>DATOS PERSONALES</span>
-							</h3>	
-						</div>					
-						<div class="col-sm-1"></div>					
-					</div>
-					<div class="row col-sm-12">
-						<div class="col-sm-1"></div>
-						<div class="col-sm-10 bordes bordeSuperior">
-							<div class="row">
-								<div class="col-sm-4 bordeVertical">
-									<p>Primer Apellido </p>
-									<input class="input-mostrar" type="text-form" name="apellido1"/>
-								</div>
-								<div class="col-sm-4 bordeVertical">
-									<p>Segundo Apellido</p>	
-									<input class="input-mostrar" type="text-form" name="apellido2"/>
-								</div>
-								<div class="col-sm-4">
-									<p>Nombres</p>	
-									<input class="input-mostrar" type="text-form" name="nombres"/>
-								</div>
-							</div>
+					<!-- BEGIN: Subheader -->
+					<div class="m-subheader ">
+						<div class="d-flex align-items-center">
+							<div class="mr-auto">
+								<h3 class="m-subheader__title ">
+									Hoja de vida
+								</h3>
+							</div>							
 						</div>
-						<div class="col-sm-1"></div>
 					</div>
-					<div class="row col-sm-12">
-						<div class="col-sm-1"></div>
-						<div class="col-sm-10 bordes">
-							<div class="row">
-								<div class="col-sm-6 bordeVertical">
-									<p>DOCUMENTO DE INDENTIFICACION</p>
+					<!-- END: Subheader -->
+					<div class="col-xl-12">
+						<div class="m-portlet m-portlet--mobile ">
+							<div class="m-portlet__body">
+								<div class="row col-sm-12">
+									<div class="col-sm-1"></div>
+									<div class="row col-sm-10">
+										<center>
+											<table class="table-bordered table-bordered2 input_eduSuperior">
+												<thead>
+													<tr>
+														<th rowspan="3" style="width: 25%;"><img src="public/assets/demo/demo3/media/img/logo/logo_1.png"></th>
+														<th><center><h3>CORPORACION PROYECTO SER HUMANO</h3></th></center>
+														<th rowspan="2"><h3>GTH-F-02</h3></th>
+													</tr>
+													<tr>
+														<td><center><h3>GESTION DE TALENTO HUMANO</h3></center></td>
+													</tr>
+													<tr>
+														<td><center><h3>Formato Hoja de Vida</h3></center></td>
+														<td><h3>Versión 02</h3></td>
+													</tr>
+												</thead>
+												<tbody>								
+												</tbody>
+											</table>
+										</center>
+									</div>
+									<div class="col-sm-1"></div>
+								</div>
+								<form id="myForm" name="myForm" method="post" rol="form" onsubmit="return registroHojaDeVida();">
+									<br>
+									<!--Primeara Parte-->
 									<div class="row col-sm-12">
-										<label class="m-radio">			                            
-				                            <input type="radio" name="tipo_doc" checked value="1"  />C.C
-				                            <span></span>
-				                        </label>
-				                        <label class="m-radio">			                            
-				                            <input type="radio" name="tipo_doc" value="1"  />C.E
-				                            <span></span>
-				                        </label>
-				                        <label class="m-radio">			                            
-				                            <input type="radio" name="tipo_doc" value="1"  />PAS
-				                            <span></span>
-				                        </label>			                        														
-				                        <label>No.<input class="input-mostrar linea" type="number" name="numero"></label>
-									</div>
-								</div>
-								<div class="col-sm-1 bordeVertical">
-									<p>SEXO</p>
-									<div class="row">
-										<label>F<input type="radio" name="sexo" value="F"></label>
-										<label>M<input type="radio" name="sexo" value="M"></label>
-									</div>
-								</div>
-								<div class="col-sm-5">
-									<div class="row">
-										<div class="col-sm-6">
-											<p>NACIONALIDAD</p>
-											<div class="row ">
-												<label>COL.<input type="radio" name="nac"></label>
-												<label>EXTRANJERO<input type="radio" name="nac"></label>
-											</div>
+										<div class="row col-sm-12">
+											<div class="col-sm-1"></div>					
+											<div class="col-sm-10 thead-dark">
+												<h3>
+													<span>1</span>
+													<span>DATOS PERSONALES</span>
+												</h3>	
+											</div>					
+											<div class="col-sm-1"></div>					
 										</div>
-										<div class="col-sm-6">
-											<p>PAIS</p>
-											<div class="row col-sm-12">											
-												<select class="input-mostrar form-control m-input" id="" name="nacionalidad">
-													<option value="Colombiano">Colombia</option>
-													<option value="Venezolano">Venezuela</option>
-													<option value="Peruano">Perú</option>
-													<option value="Ecuatoriano">Ecuador</option>
-													<option value="Panameño">Panama</option>
-												</select>
+										<div class="row col-sm-12">
+											<div class="col-sm-1"></div>
+											<div class="col-sm-10 bordes bordeSuperior">
+												<div class="row">
+													<div class="col-sm-4 bordeVertical">
+														<p>Primer Apellido </p>
+														<input class="input-mostrar" type="text-form" name="apellido1"/>
+													</div>
+													<div class="col-sm-4 bordeVertical">
+														<p>Segundo Apellido</p>	
+														<input class="input-mostrar" type="text-form" name="apellido2"/>
+													</div>
+													<div class="col-sm-4">
+														<p>Nombres</p>	
+														<input class="input-mostrar" type="text-form" name="nombres"/>
+													</div>
+												</div>
 											</div>
+											<div class="col-sm-1"></div>
 										</div>
-									</div>								
-								</div>
-								
-							</div>
-						</div>
-						<div class="col-sm-1"></div>
-					</div>
-					<div class="row col-sm-12">
-						<div class="col-sm-1"></div>
-						<div class="col-sm-10 bordes">
-							<p>LIBRETA MILITAR</p>
-							<div class="row col-sm-12">
-								<label>PRIMERA CLASE<input type="radio" name="lbrta_mil_clase" value="PRIMERA"></label>
-								<label>SEGUNDA CLASE<input type="radio" name="lbrta_mil_clase" value="Segunda"></label>
-								<label>NUMERO<input class="input-mostrar linea" type="number" name="num_lbrta_mil"></label>
-								<label>DM<input class="input-mostrar linea" type="text" name="dm"></label>
-							</div>						
-						</div>
-						<div class="col-sm-1"></div>
-					</div>
-					<div class="row col-sm-12">
-						<div class="col-sm-1"></div>
-						<div class="col-sm-10 bordes">
-							<div class="row">
-								<div class="col-sm-5 bordeVertical">
-									<p>FECHA Y LUGAR DE NACIMIENTO</p>								
+										<div class="row col-sm-12">
+											<div class="col-sm-1"></div>
+											<div class="col-sm-10 bordes">
+												<div class="row">
+													<div class="col-sm-6 bordeVertical">
+														<p>DOCUMENTO DE INDENTIFICACION</p>
+														<div class="row col-sm-12">
+															<label class="m-radio">			                            
+									                            <input type="radio" name="tipo_doc" checked value="1"  />C.C
+									                            <span></span>
+									                        </label>
+									                        <label class="m-radio">			                            
+									                            <input type="radio" name="tipo_doc" value="1"  />C.E
+									                            <span></span>
+									                        </label>
+									                        <label class="m-radio">			                            
+									                            <input type="radio" name="tipo_doc" value="1"  />PAS
+									                            <span></span>
+									                        </label>			                        														
+									                        <label>No.<input class="input-mostrar linea" type="number" name="numero"></label>
+														</div>
+													</div>
+													<div class="col-sm-1 bordeVertical">
+														<p>SEXO</p>
+														<div class="row">
+															<label>F<input type="radio" name="sexo" value="F"></label>
+															<label>M<input type="radio" name="sexo" value="M"></label>
+														</div>
+													</div>
+													<div class="col-sm-5">
+														<div class="row">
+															<div class="col-sm-6">
+																<p>NACIONALIDAD</p>
+																<div class="row ">
+																	<label>COL.<input type="radio" name="nac"></label>
+																	<label>EXTRANJERO<input type="radio" name="nac"></label>
+																</div>
+															</div>
+															<div class="col-sm-6">
+																<p>PAIS</p>
+																<div class="row col-sm-12">											
+																	<select class="input-mostrar form-control m-input" id="" name="nacionalidad">
+																		<option value="Colombiano">Colombia</option>
+																		<option value="Venezolano">Venezuela</option>
+																		<option value="Peruano">Perú</option>
+																		<option value="Ecuatoriano">Ecuador</option>
+																		<option value="Panameño">Panama</option>
+																	</select>
+																</div>
+															</div>
+														</div>								
+													</div>
+													
+												</div>
+											</div>
+											<div class="col-sm-1"></div>
+										</div>
+										<div class="row col-sm-12">
+											<div class="col-sm-1"></div>
+											<div class="col-sm-10 bordes">
+												<p>LIBRETA MILITAR</p>
+												<div class="row col-sm-12">
+													<label>PRIMERA CLASE<input type="radio" name="lbrta_mil_clase" value="PRIMERA"></label>
+													<label>SEGUNDA CLASE<input type="radio" name="lbrta_mil_clase" value="Segunda"></label>
+													<label>NUMERO<input class="input-mostrar linea" type="number" name="num_lbrta_mil"></label>
+													<label>DM<input class="input-mostrar linea" type="text" name="dm"></label>
+												</div>						
+											</div>
+											<div class="col-sm-1"></div>
+										</div>
+										<div class="row col-sm-12">
+											<div class="col-sm-1"></div>
+											<div class="col-sm-10 bordes">
+												<div class="row">
+													<div class="col-sm-5 bordeVertical">
+														<p>FECHA Y LUGAR DE NACIMIENTO</p>								
+														<div class="row col-sm-12">
+															<label style="margin-right: 15px;">FECHA</label>
+															<!--<label>DIA</label><input class="date_libreta" type="text" name="diaNacimiento">
+															<label>MES</label><input class="date_libreta" type="text" name="mesNacimiento">
+															<label>AÑO</label><input class="date_libreta" type="text" name="anioNacimiento">-->
+															<input class="input-mostrar" type="date" name="fecha_nacim">
+														</div>								
+														<!--<label>PAIS<input class="input-mostrar linea" type="number" name="fechaNacimiento"></label>-->
+														<label>PAIS</label>
+														<select class="input-mostrar form-control m-input" id="" name="pais_nacim">
+															<option value="Colombia">Colombia</option>
+															<option value="Venezuela">Venezuela</option>
+															<option value="Perú">Perú</option>
+															<option value="Ecuador">Ecuador</option>
+															<option value="Panama">Panama</option>
+														</select>								
+														<label>DEPTO</label>
+														<select class="input-mostrar form-control m-input" id="" name="depto_nacim">
+															<option value="1">Norte De Santander</option>
+															<option value="1">Santander</option>
+															<option value="1">Cundinamarca</option>
+															<option value="1">Cauca</option>
+															<option value="1">Cesar</option>
+														</select>
+														<label>MUNICIPIO</label>
+														<select class="input-mostrar form-control m-input" id="" name="mun_nacim">
+															<option value="5">Cucuta</option>
+															<option value="5">Los Patios</option>
+															<option value="5">Chinacota</option>
+															<option value="5">Bochalema</option>
+															<option value="5">Toledo</option>
+														</select>
+													</div>		
+													<div class="col-sm-7">
+														<p>DIRECCION DE CORRESPONDENCIA</p>								
+														<input class="input-mostrar linea" type="text" name="direccion_corresp">
+														<div class="row col-sm-12">								
+															<label>PAIS</label><!--<input class="input-mostrar linea" type="text" name="diaNacimiento">-->
+															<select class="input-mostrar form-control m-input" id="" name="pais_corresp">
+																<option value="Colombia">Colombia</option>
+																<option value="Venezuela">Venezuela</option>
+																<option value="Perú">Perú</option>
+																<option value="Ecuador">Ecuador</option>
+																<option value="Panama">Panama</option>
+															</select>
+															<label>DEPTO</label><!--<input class="input-mostrar linea" type="text" name="mesNacimiento">-->
+															<select class="input-mostrar form-control m-input" id="" name="depto_corresp">
+																<option value="1">Norte De Santander</option>
+																<option value="1">Santander</option>
+																<option value="1">Cundinamarca</option>
+																<option value="1">Cauca</option>
+																<option value="1">Cesar</option>
+															</select>								
+														</div>
+														<label>MUNICIPIO
+															<!--<input class="input-mostrar linea" type="number" name="fechaNacimiento">-->				
+															<select class="input-mostrar form-control m-input" id="" name="mun_corresp">
+																<option value="5">Cucuta</option>
+																<option value="5">Los Patios</option>
+																<option value="5">Chinacota</option>
+																<option value="5">Bochalema</option>
+																<option value="5">Toledo</option>
+															</select>
+														</label>
+														<div class="row col-sm-12">								
+															<label>TELEFONO</label><input class="input-mostrar linea" type="text" name="telefono">
+															<label>EMAIL</label><input class="input-mostrar linea" type="text" name="email">	
+														</div>
+													</div>
+												</div>						
+											</div>
+											<div class="col-sm-1"></div>
+										</div>				
+									</div>
+									<br>
+									<!--Segunda Parte-->
 									<div class="row col-sm-12">
-										<label style="margin-right: 15px;">FECHA</label>
-										<!--<label>DIA</label><input class="date_libreta" type="text" name="diaNacimiento">
-										<label>MES</label><input class="date_libreta" type="text" name="mesNacimiento">
-										<label>AÑO</label><input class="date_libreta" type="text" name="anioNacimiento">-->
-										<input class="input-mostrar" type="date" name="fecha_nacim">
-									</div>								
-									<!--<label>PAIS<input class="input-mostrar linea" type="number" name="fechaNacimiento"></label>-->
-									<label>PAIS</label>
-									<select class="input-mostrar form-control m-input" id="" name="pais_nacim">
-										<option value="Colombia">Colombia</option>
-										<option value="Venezuela">Venezuela</option>
-										<option value="Perú">Perú</option>
-										<option value="Ecuador">Ecuador</option>
-										<option value="Panama">Panama</option>
-									</select>								
-									<label>DEPTO</label>
-									<select class="input-mostrar form-control m-input" id="" name="depto_nacim">
-										<option value="1">Norte De Santander</option>
-										<option value="1">Santander</option>
-										<option value="1">Cundinamarca</option>
-										<option value="1">Cauca</option>
-										<option value="1">Cesar</option>
-									</select>
-									<label>MUNICIPIO</label>
-									<select class="input-mostrar form-control m-input" id="" name="mun_nacim">
-										<option value="5">Cucuta</option>
-										<option value="5">Los Patios</option>
-										<option value="5">Chinacota</option>
-										<option value="5">Bochalema</option>
-										<option value="5">Toledo</option>
-									</select>
-								</div>		
-								<div class="col-sm-7">
-									<p>DIRECCION DE CORRESPONDENCIA</p>								
-									<input class="input-mostrar linea" type="text" name="direccion_corresp">
-									<div class="row col-sm-12">								
-										<label>PAIS</label><!--<input class="input-mostrar linea" type="text" name="diaNacimiento">-->
-										<select class="input-mostrar form-control m-input" id="" name="pais_corresp">
-											<option value="Colombia">Colombia</option>
-											<option value="Venezuela">Venezuela</option>
-											<option value="Perú">Perú</option>
-											<option value="Ecuador">Ecuador</option>
-											<option value="Panama">Panama</option>
-										</select>
-										<label>DEPTO</label><!--<input class="input-mostrar linea" type="text" name="mesNacimiento">-->
-										<select class="input-mostrar form-control m-input" id="" name="depto_corresp">
-											<option value="1">Norte De Santander</option>
-											<option value="1">Santander</option>
-											<option value="1">Cundinamarca</option>
-											<option value="1">Cauca</option>
-											<option value="1">Cesar</option>
-										</select>								
+										<div class="row col-sm-12">
+											<div class="col-sm-1"></div>					
+											<div class="col-sm-10 thead-dark">
+												<h3>
+													<span>2</span>
+													<span>FORMACION ACADEMICA</span>
+												</h3>	
+											</div>					
+											<div class="col-sm-1"></div>					
+										</div>
+										<div class="row col-sm-12">
+											<div class="col-sm-1"></div>
+											<div class="col-sm-10 bordes bordeSuperior">
+												<p>EDUCACION BASICA Y MEDIA</p>
+												<p>MARQUE CON UNA X EL ÚLTIMO GRADO APROBADO ( LOS GRADOS DE 1o. A 6o. DE BACHILLERATO EQUIVALEN A LOS GRADOS 6o. A 11o. DE EDUCACIÓN BÁSICA SECUNDARIA Y MEDIA )</p>
+												<center>
+													<table class="table-bordered table-bordered2">
+														<thead>
+															<tr>
+																<th colspan="11">EDUCACIÓN BÁSICA</th>
+																<th colspan="2">TÍTULO OBTENIDO<input type="text" name="titulo_obtenido"></th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td colspan="5">PRIMARIA</td>
+																<td colspan="4">SECUNDARIA</td>
+																<td colspan="2">MEDIA</td>
+																<td colspan="2">FECHA DE GRADO</td>
+															</tr>
+															<tr>
+																<td>1<input type="radio" name="ultm_grd_aprob" value="1"></td>
+																<td>2<input type="radio" name="ultm_grd_aprob" value="2"></td>
+																<td>3<input type="radio" name="ultm_grd_aprob" value="3"></td>
+																<td>4<input type="radio" name="ultm_grd_aprob" value="4"></td>
+																<td>5<input type="radio" name="ultm_grd_aprob" value="5"></td>
+																<td>6<input type="radio" name="ultm_grd_aprob" value="6"></td>
+																<td>7<input type="radio" name="ultm_grd_aprob" value="7"></td>
+																<td>8<input type="radio" name="ultm_grd_aprob" value="8"></td>
+																<td>9<input type="radio" name="ultm_grd_aprob" value="9"></td>
+																<td>10<input type="radio" name="ultm_grd_aprob" value="10"></td>
+																<td>11<input type="radio" name="ultm_grd_aprob" value="11"></td>
+																<td>MES<input class="input-mostrar linea" type="number" name="fecha_mes_grado"></td>
+																<td>AÑO<input class="input-mostrar linea" type="number" name="fecha_anio_grado"></td>
+															</tr>
+														</tbody>
+													</table>
+												</center>													
+											</div>
+											<div class="col-sm-1"></div>
+										</div>
+										<div class="row col-sm-12">
+											<div class="col-sm-1"></div>
+											<div class="col-sm-10 bordes">
+												<div class="row col-sm-12">
+													EDUCACION SUPERIOR (PREGRADO Y POSTGRADO)
+													DILIGENCIE ESTE PUNTO EN ESTRICTO ORDEN CRONOLÓGICO, EN MODALIDAD ACADÉMICA ESCRIBA:						
+													<div class="col-sm-3">
+														<label>TC (TÉCNICA)</label>
+														<label>ES (ESPECIALIZACIÓN)</label>
+													</div>
+													<div class="col-sm-3">
+														<label>TL (TECNOLÓGICA)</label>
+														<label>MG (MAESTRÍA O MAGISTER)</label>
+													</div>
+													<div class="col-sm-3">
+														<label>TE (TECNOLÓGICA ESPECIALIZADA)</label>
+														<label>DOC (DOCTORADO O PHD)</label>
+													</div>
+													<div class="col-sm-3">
+														<label>UN (UNIVERSITARIA)</label>
+														<label></label>
+													</div>
+													RELACIONE AL FRENTE EL NÚMERO DE LA TARJETA PROFESIONAL (SI ÉSTA HA SIDO PREVISTA EN UNA LEY).
+												</div>
+											</div>
+											<div class="col-sm-1"></div>
+										</div>
+										<div class="row col-sm-12">
+											<div class="col-sm-1"></div>
+											<div class="col-sm-10 bordes">
+												<div class="row">
+													<table class="table-bordered">
+														<thead>
+															<tr>
+																<th rowspan="2">Modalidad Academica</th>
+																<th rowspan="2">No. Semestres Aprobados</th>
+																<th colspan="2">Graduado</th>
+																<th rowspan="2">Nombre de los estudios</th>
+																<th colspan="2">Terminación</th>
+																<th rowspan="2">No. De Tarjeta PRofesional</th>
+															</tr>
+															<tr>
+																<td>SI</td>
+																<td>NO</td>
+																<td>MES</td>
+																<td>AÑO</td>      
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>
+																	<select class="input-mostrar form-control m-input" id="" name="modalidad_academica_id_1">
+																		<option value="1">T</option>
+																		<option value="2">TC</option>
+																		<option value="3">TE</option>
+																		<option value="4">UN</option>
+																		<option value="5">ES</option>
+																		<option value="6">MG</option>
+																		<option value="7">DOC</option>
+																	</select>
+																</td>
+																<td><input class="input_eduSuperior input-mostrar" type="number" name="numero_semest_aprob_1"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="radio" name="graduado_1" value="S"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="radio" name="graduado_1" value="N"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="text" name="estudio_titulo_obte_1"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="number" name="fecha_mes_terminacion_1"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="number" name="fecha_anio_terminacion_1"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="number" name="num_tarjeta_prof_1"></td>
+															</tr>
+															<tr>
+																<td>
+																	<select class="input-mostrar form-control m-input" id="" name="modalidad_academica_id_2">
+																		<option value="1">T</option>
+																		<option value="2">TC</option>
+																		<option value="3">TE</option>
+																		<option value="4">UN</option>
+																		<option value="5">ES</option>
+																		<option value="6">MG</option>
+																		<option value="7">DOC</option>
+																	</select>
+																</td>
+																<td><input class="input_eduSuperior input-mostrar" type="number" name="numero_semest_aprob_2"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="radio" name="graduado_2" value="S"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="radio" name="graduado_2" value="N"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="text" name="estudio_titulo_obte_2"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="number" name="fecha_mes_terminacion_2"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="number" name="fecha_anio_terminacion_2"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="number" name="num_tarjeta_prof_2"></td>
+															</tr>
+															<tr>
+																<td>
+																	<select class="input-mostrar form-control m-input" id="" name="modalidad_academica_id_3">
+																		<option value="1">T</option>
+																		<option value="2">TC</option>
+																		<option value="3">TE</option>
+																		<option value="4">UN</option>
+																		<option value="5">ES</option>
+																		<option value="6">MG</option>
+																		<option value="7">DOC</option>
+																	</select>
+																</td>
+																<td><input class="input_eduSuperior input-mostrar" type="number" name="numero_semest_aprob_3"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="radio" name="graduado_3" value="S"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="radio" name="graduado_3" value="N"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="text" name="estudio_titulo_obte_3"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="number" name="fecha_mes_terminacion_3"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="number" name="fecha_anio_terminacion_3"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="number" name="num_tarjeta_prof_3"></td>
+															</tr>
+															<tr>
+																<td>
+																	<select class="input-mostrar form-control m-input" id="" name="modalidad_academica_id_4">
+																		<option value="1">T</option>
+																		<option value="2">TC</option>
+																		<option value="3">TE</option>
+																		<option value="4">UN</option>
+																		<option value="5">ES</option>
+																		<option value="6">MG</option>
+																		<option value="7">DOC</option>
+																	</select>
+																</td>
+																<td><input class="input_eduSuperior input-mostrar" type="number" name="numero_semest_aprob_4"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="radio" name="graduado_4" value="S"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="radio" name="graduado_4" value="N"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="text" name="estudio_titulo_obte_4"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="number" name="fecha_mes_terminacion_4"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="number" name="fecha_anio_terminacion_4"></td>
+																<td><input class="input_eduSuperior input-mostrar" type="number" name="num_tarjeta_prof_4"></td>
+															</tr>										  
+														</tbody>
+													</table>
+												</div>						
+											</div>
+											<div class="col-sm-1"></div>
+										</div>				
 									</div>
-									<label>MUNICIPIO
-										<!--<input class="input-mostrar linea" type="number" name="fechaNacimiento">-->				
-										<select class="input-mostrar form-control m-input" id="" name="mun_corresp">
-											<option value="5">Cucuta</option>
-											<option value="5">Los Patios</option>
-											<option value="5">Chinacota</option>
-											<option value="5">Bochalema</option>
-											<option value="5">Toledo</option>
-										</select>
-									</label>
-									<div class="row col-sm-12">								
-										<label>TELEFONO</label><input class="input-mostrar linea" type="text" name="telefono">
-										<label>EMAIL</label><input class="input-mostrar linea" type="text" name="email">	
+									<br>
+									<!--Tercera Parte-->
+									<div class="row col-sm-12">
+										<div class="row col-sm-12">
+											<div class="col-sm-1"></div>					
+											<div class="col-sm-10 thead-dark">
+												<h3 class="thead-dark">
+													<span>3</span>
+													<span>EXPERIENCIA LABORAL</span>
+												</h3>
+											</div>					
+											<div class="col-sm-1"></div>					
+										</div>
+										<div class="row col-sm-12">
+											<div class="col-sm-1"></div>					
+											<div class="col-sm-10">												
+												<div class="row">
+													<div class="col-sm-12 bordes bordeSuperior">
+														<center>
+															<label>EMPLEO ACTUAL O CONTRATO VIGENTE</label>
+															<input type="hidden" name="estado_contrato_1" value="1">
+														</center>
+													</div>
+													<div class="col-sm-12 bordes">
+														<div class="row">
+															<div class="col-sm-6 bordeVertical">
+																<label>EMPRESA O ENTIDAD</label>
+																<input class="input-mostrar input_eduSuperior" type="text" name="empresa_entidad_1"/>
+															</div>
+															<div class="col-sm-1 bordeVertical">
+																<label class="row">PUBLICA</label>
+																<input class="input-mostrar input_eduSuperior" type="radio" name="tipo_1" value="PUBLICA" />
+															</div>
+															<div class="col-sm-1 bordeVertical">
+																<label class="row">PRIVADA</label>
+																<input class="input-mostrar input_eduSuperior" type="radio" name="tipo_1" value="PRIVADA" />
+															</div>
+															<div class="col-sm-4">
+																<label>PAIS</label>
+																<!--<input class="input-mostrar input_eduSuperior" type="text" name=""/>-->
+																<select class="input-mostrar form-control m-input" id="" name="pais_1">
+																	<option value="Colombia">Colombia</option>
+																	<option value="Venezuela">Venezuela</option>
+																	<option value="Perú">Perú</option>
+																	<option value="Ecuador">Ecuador</option>
+																	<option value="Panama">Panama</option>
+																</select>
+															</div>
+														</div>
+													</div>
+													<div class="col-sm-12 bordes">
+														<div class="row">
+															<div class="col-sm-4 bordeVertical">
+																<label>DEPARTAMENTO</label>
+																<!--<input class="input-mostrar input_eduSuperior" type="text" name=""/>-->
+																<select class="input-mostrar form-control m-input" id="" name="departamento_1">
+																	<option value="1">Norte De Santander</option>
+																	<option value="1">Santander</option>
+																	<option value="1">Cundinamarca</option>
+																	<option value="1">Cauca</option>
+																	<option value="1">Cesar</option>
+																</select>
+															</div>
+															<div class="col-sm-4 bordeVertical">
+																<label>MUNICIPIO</label>
+																<!--<input class="input-mostrar input_eduSuperior" type="text" name=""/>-->
+																<select class="input-mostrar form-control m-input" id="" name="municipio_1">
+																	<option value="5">Cucuta</option>
+																	<option value="5">Los Patios</option>
+																	<option value="5">Chinacota</option>
+																	<option value="5">Bochalema</option>
+																	<option value="5">Toledo</option>
+																</select>
+															</div>
+															<div class="col-sm-4">
+																<label>CORREO ELECTRONICO ENTIDAD</label>
+																<input class="input-mostrar input_eduSuperior" type="text" name="correo_entidad_1"/>
+															</div>
+														</div>
+													</div>
+													<div class="col-sm-12 bordes">
+														<div class="row">
+															<div class="col-sm-4 bordeVertical">
+																<label>TELEFONO</label>
+																<input class="input-mostrar input_eduSuperior" type="text" name="telefono_entidad_1"/>
+															</div>
+															<div class="col-sm-4 bordeVertical">
+																<label>FECHA DE INGRESO</label>
+																<input class="input-mostrar input_eduSuperior" type="date" name="fecha_ingreso_1"/>
+															</div>
+															<div class="col-sm-4">
+																<label>FECHA DE RETIRO</label>
+																<input class="input-mostrar input_eduSuperior" type="date" name="fecha_retiro_1"/>
+															</div>
+														</div>
+													</div>
+													<div class="col-sm-12 bordes">
+														<div class="row">
+															<div class="col-sm-4 bordeVertical">
+																<label>CARGO O CONTRATO</label>
+																<input class="input-mostrar input_eduSuperior" type="text" name="cargo_contratado_1"/>
+															</div>
+															<div class="col-sm-4 bordeVertical">
+																<label>DEPENDENCIA</label>
+																<input class="input-mostrar input_eduSuperior" type="text" name="dependencia_1"/>
+															</div>
+															<div class="col-sm-4">
+																<label>DIRECCION</label>
+																<input class="input-mostrar input_eduSuperior" type="text" name="direccion_1"/>
+															</div>
+														</div>
+													</div>
+												</div>							
+												<div class="row">
+													<div class="col-sm-12 bordes bordeSuperior">
+														<center>
+															<label>EMPLEO ACTUAL O CONTRATO ANTERIOR</label>
+															<input type="hidden" name="estado_contrato_2" value="0">
+														</center>
+													</div>
+													<div class="col-sm-12 bordes">
+														<div class="row">
+															<div class="col-sm-6 bordeVertical">
+																<label>EMPRESA O ENTIDAD</label>
+																<input class="input-mostrar input_eduSuperior" type="text" name="empresa_entidad_2"/>
+															</div>
+															<div class="col-sm-1 bordeVertical">
+																<label class="row">PUBLICA</label>
+																<input class="input-mostrar input_eduSuperior" type="radio" name="tipo_2" value="PUBLICA" />
+															</div>
+															<div class="col-sm-1 bordeVertical">
+																<label class="row">PRIVADA</label>
+																<input class="input-mostrar input_eduSuperior" type="radio" name="tipo_2" value="PRIVADA" />
+															</div>
+															<div class="col-sm-4">
+																<label>PAIS</label>
+																<!--<input class="input-mostrar input_eduSuperior" type="text" name=""/>-->
+																<select class="input-mostrar form-control m-input" id="" name="pais_2">
+																	<option value="Colombia">Colombia</option>
+																	<option value="Venezuela">Venezuela</option>
+																	<option value="Perú">Perú</option>
+																	<option value="Ecuador">Ecuador</option>
+																	<option value="Panama">Panama</option>
+																</select>
+															</div>
+														</div>
+													</div>
+													<div class="col-sm-12 bordes">
+														<div class="row">
+															<div class="col-sm-4 bordeVertical">
+																<label>DEPARTAMENTO</label>
+																<!--<input class="input-mostrar input_eduSuperior" type="text" name=""/>-->
+																<select class="input-mostrar form-control m-input" id="" name="departamento_2">
+																	<option value="1">Norte De Santander</option>
+																	<option value="1">Santander</option>
+																	<option value="1">Cundinamarca</option>
+																	<option value="1">Cauca</option>
+																	<option value="1">Cesar</option>
+																</select>
+															</div>
+															<div class="col-sm-4 bordeVertical">
+																<label>MUNICIPIO</label>
+																<!--<input class="input-mostrar input_eduSuperior" type="text" name=""/>-->
+																<select class="input-mostrar form-control m-input" id="" name="municipio_2">
+																	<option value="5">Cucuta</option>
+																	<option value="5">Los Patios</option>
+																	<option value="5">Chinacota</option>
+																	<option value="5">Bochalema</option>
+																	<option value="5">Toledo</option>
+																</select>
+															</div>
+															<div class="col-sm-4">
+																<label>CORREO ELECTRONICO ENTIDAD</label>
+																<input class="input-mostrar input_eduSuperior" type="text" name="correo_entidad_2"/>
+															</div>
+														</div>
+													</div>
+													<div class="col-sm-12 bordes">
+														<div class="row">
+															<div class="col-sm-4 bordeVertical">
+																<label>TELEFONO</label>
+																<input class="input-mostrar input_eduSuperior" type="text" name="telefono_entidad_2"/>
+															</div>
+															<div class="col-sm-4 bordeVertical">
+																<label>FECHA DE INGRESO</label>
+																<input class="input-mostrar input_eduSuperior" type="date" name="fecha_ingreso_2"/>
+															</div>
+															<div class="col-sm-4">
+																<label>FECHA DE RETIRO</label>
+																<input class="input-mostrar input_eduSuperior" type="date" name="fecha_retiro_2"/>
+															</div>
+														</div>
+													</div>
+													<div class="col-sm-12 bordes">
+														<div class="row">
+															<div class="col-sm-4 bordeVertical">
+																<label>CARGO O CONTRATO</label>
+																<input class="input-mostrar input_eduSuperior" type="text" name="cargo_contratado_2"/>
+															</div>
+															<div class="col-sm-4 bordeVertical">
+																<label>DEPENDENCIA</label>
+																<input class="input-mostrar input_eduSuperior" type="text" name="dependencia_2"/>
+															</div>
+															<div class="col-sm-4">
+																<label>DIRECCION</label>
+																<input class="input-mostrar input_eduSuperior" type="text" name="direccion_2"/>
+															</div>
+														</div>
+													</div>
+												</div>							
+												<div class="row">
+													<div class="col-sm-12 bordes bordeSuperior">
+														<center>
+															<label>EMPLEO ACTUAL O CONTRATO ANTERIOR</label>
+															<input type="hidden" name="estado_contrato_3" value="0">
+														</center>
+													</div>
+													<div class="col-sm-12 bordes">
+														<div class="row">
+															<div class="col-sm-6 bordeVertical">
+																<label>EMPRESA O ENTIDAD</label>
+																<input class="input-mostrar input_eduSuperior" type="text" name="empresa_entidad_3"/>
+															</div>
+															<div class="col-sm-1 bordeVertical">
+																<label class="row">PUBLICA</label>
+																<input class="input-mostrar input_eduSuperior" type="radio" name="tipo_3" value="PUBLICA" />
+															</div>
+															<div class="col-sm-1 bordeVertical">
+																<label class="row">PRIVADA</label>
+																<input class="input-mostrar input_eduSuperior" type="radio" name="tipo_3" value="PRIVADA" />
+															</div>
+															<div class="col-sm-4">
+																<label>PAIS</label>
+																<!--<input class="input-mostrar input_eduSuperior" type="text" name=""/>-->
+																<select class="input-mostrar form-control m-input" id="" name="pais_3">
+																	<option value="Colombia">Colombia</option>
+																	<option value="Venezuela">Venezuela</option>
+																	<option value="Perú">Perú</option>
+																	<option value="Ecuador">Ecuador</option>
+																	<option value="Panama">Panama</option>>
+																</select>
+															</div>
+														</div>
+													</div>
+													<div class="col-sm-12 bordes">
+														<div class="row">
+															<div class="col-sm-4 bordeVertical">
+																<label>DEPARTAMENTO</label>
+																<!--<input class="input-mostrar input_eduSuperior" type="text" name=""/>-->
+																<select class="input-mostrar form-control m-input" id="" name="departamento_3">
+																	<option value="1">Norte De Santander</option>
+																	<option value="1">Santander</option>
+																	<option value="1">Cundinamarca</option>
+																	<option value="1">Cauca</option>
+																	<option value="1">Cesar</option>
+																</select>
+															</div>
+															<div class="col-sm-4 bordeVertical">
+																<label>MUNICIPIO</label>
+																<!--<input class="input-mostrar input_eduSuperior" type="text" name=""/>-->
+																<select class="input-mostrar form-control m-input" id="" name="municipio_3">
+																	<option value="5">Cucuta</option>
+																	<option value="5">Los Patios</option>
+																	<option value="5">Chinacota</option>
+																	<option value="5">Bochalema</option>
+																	<option value="5">Toledo</option>
+																</select>
+															</div>
+															<div class="col-sm-4">
+																<label>CORREO ELECTRONICO ENTIDAD</label>
+																<input class="input-mostrar input_eduSuperior" type="text" name="correo_entidad_3"/>
+															</div>
+														</div>
+													</div>
+													<div class="col-sm-12 bordes">
+														<div class="row">
+															<div class="col-sm-4 bordeVertical">
+																<label>TELEFONO</label>
+																<input class="input-mostrar input_eduSuperior" type="text" name="telefono_entidad_3"/>
+															</div>
+															<div class="col-sm-4 bordeVertical">
+																<label>FECHA DE INGRESO</label>
+																<input class="input-mostrar input_eduSuperior" type="date" name="fecha_ingreso_3"/>
+															</div>
+															<div class="col-sm-4">
+																<label>FECHA DE RETIRO</label>
+																<input class="input-mostrar input_eduSuperior" type="date" name="fecha_retiro_3"/>
+															</div>
+														</div>
+													</div>
+													<div class="col-sm-12 bordes">
+														<div class="row">
+															<div class="col-sm-4 bordeVertical">
+																<label>CARGO O CONTRATO</label>
+																<input class="input-mostrar input_eduSuperior" type="text" name="cargo_contratado_3"/>
+															</div>
+															<div class="col-sm-4 bordeVertical">
+																<label>DEPENDENCIA</label>
+																<input class="input-mostrar input_eduSuperior" type="text" name="dependencia_3"/>
+															</div>
+															<div class="col-sm-4">
+																<label>DIRECCION</label>
+																<input class="input-mostrar input_eduSuperior" type="text" name="direccion_3"/>
+															</div>
+														</div>
+													</div>
+												</div>							
+											</div>					
+											<div class="col-sm-1"></div>					
+										</div>																							
 									</div>
+									<br>			
+									<!--Cuarta Parte-->
+									<div class="row col-sm-12">
+										<div class="row col-sm-12">
+											<div class="col-sm-1"></div>					
+											<div class="col-sm-10 thead-dark">
+												<h3>
+													<span>4</span>
+													<span>CIUDAD Y FECHA DE DILIGENCIAMIENTO</span>
+												</h3>
+											</div>					
+											<div class="col-sm-1"></div>					
+										</div>
+										<div class="row col-sm-12">
+											<div class="col-sm-1"></div>
+											<div class="col-sm-10 bordes bordeSuperior">
+												<p>MANIFIESTO BAJO LA GRAVEDAD DEL JURAMENTO QUE SI [O] NO [O] ME ENCUENTRO DENTRO DE LAS CAUSALES DE INHABILIDAD E INCOMPATIBILIDAD DEL ORDEN CONSTITUCIONAL O LEGAL, PARA EJERCER CARGOS EMPLEOS PÚBLICOS O PARA CELEBRAR CONTRATOS DE PRESTACIÓN DE SERVICIOS CON LA ADMINISTRACIÓN PÚBLICA.</p>
+												<p>PARA TODOS LOS EFECTOS LEGALES, CERTIFICO QUE LOS DATOS POR MI ANOTADOS EN EL PRESENTE FORMATO ÚNICO DE HOJA DE VIDA, SON VERACES, (ARTÍCULO 5o. DE LA LEY 190/95).</p>
+												<p> Ciudad y fecha de diligenciamiento
+													<input class="input-mostrar linea" type="text" name="ciudad_diligenciamiento">
+													<input class="input-mostrar linea" type="date" name="fecha_diligenciamiento">
+												</p>						
+											</div>
+											<div class="col-sm-1"></div>
+										</div>
+									</div>
+									<br>
+									<!--Quinta Parte-->
+									<div class="row col-sm-12">
+										<div class="row col-sm-12">
+											<div class="col-sm-1"></div>					
+											<div class="col-sm-10 thead-dark">
+												<h3>
+													<span>5</span>
+													<span>OBSERVACIONES</span>
+												</h3>
+											</div>					
+											<div class="col-sm-1"></div>					
+										</div>
+										<div class="row col-sm-12">
+											<div class="col-sm-1"></div>
+											<div class="col-sm-10 bordes bordeSuperior">
+												<p>CERTIFICO QUE LA INFORMACIÓN AQUÍ SUMINISTRADA HA SIDO CONSTATADA FRENTE A LOS DOCUMENTOS QUE HAN SIDO PRESENTADOS COMO SOPORTE.</p>
+												<textarea class="input_eduSuperior" rows="4" cols="50" name="observacion"></textarea>
+											</div>
+											<div class="col-sm-1"></div>
+										</div>
+									</div>
+									<br>
+									<!--Sexta Parte
+									<div class="row col-sm-12">				
+										<div class="row col-sm-12">
+											<div class="col-sm-1"></div>
+											<div class="col-sm-10">
+						                        <div class="row m-portlet m-portlet--mobile">
+						                            <div class="m-portlet__head">
+						                                <div class="m-portlet__head-caption">
+						                                    <div class="m-portlet__head-title">
+						                                		<h3>
+																	<span>6</span>
+																	<span>Anexos</span>
+																</h3> 
+						                                    </div>
+						                                </div>
+						                            </div>
+						                            <div class="m-portlet__body bordes bordeSuperior input_eduSuperior">
+						                            	<div class="row col-sm-12" style="height: 250px;">
+						                            		<div class="col-sm-3">
+						                            			<input type="file" name="file-1" id="file-1" class="inputfile" onchange="PreviewImage('file-1','preview-1');">
+						                            			<label for="file-1" class="btn m-btn--pill btn-warning input_eduSuperior" style="padding: 5px;">Cargar Cedula</label>
+						                            			<div id="preview-1"></div>
+						                            		</div>
+						                            		<div class="col-sm-3">
+						                            			<input type="file" name="file-2" id="file-2" class="inputfile" onchange="PreviewImage('file-2','preview-2');">
+						                            			<label for="file-2" class="btn m-btn--pill btn-warning input_eduSuperior" style="padding: 5px;">Cargar RUT</label>
+						                            			<div id="preview-2"></div>
+						                            		</div>
+						                            		<div class="col-sm-3">
+						                            			<input type="file" name="file-3" id="file-3" class="inputfile" onchange="PreviewImage('file-3','preview-3');">
+						                            			<label for="file-3" class="btn m-btn--pill btn-warning input_eduSuperior" style="padding: 5px;">Cargar Diploma</label>
+						                            			<div id="preview-3"></div>
+						                            		</div>
+						                            		<div class="col-sm-3">
+						                            			<input type="file" name="file-4" id="file-4" class="inputfile" onchange="PreviewImage('file-4','preview-4');">
+						                            			<label for="file-4" class="btn m-btn--pill btn-warning input_eduSuperior" style="padding: 5px;">Cargar Antecedente Contraloria</label>
+						                            			<div id="preview-4"></div>
+						                            		</div>
+						                            	</div>
+						                            	<div class="row col-sm-12" style="height: 250px;">
+						                            		<div class="col-sm-3">
+						                            			<input type="file" name="file-5" id="file-5" class="inputfile" onchange="PreviewImage('file-5','preview-5');">
+						                            			<label for="file-5" class="btn m-btn--pill btn-warning input_eduSuperior" style="padding: 5px;">Cargar Antecedente Procuraduria</label>
+						                            			<div id="preview-5"></div>
+						                            		</div>
+						                            		<div class="col-sm-3">
+						                            			<input type="file" name="file-6" id="file-6" class="inputfile" onchange="PreviewImage('file-6','preview-6');">
+						                            			<label for="file-6" class="btn m-btn--pill btn-warning input_eduSuperior" style="padding: 5px;">Cargar Antecedente Policial</label>
+						                            			<div id="preview-6"></div>
+						                            		</div>
+						                            		<div class="col-sm-3">
+						                            			<input type="file" name="file-7" id="file-7" class="inputfile" onchange="PreviewImage('file-7','preview-7');">
+						                            			<label for="file-7" class="btn m-btn--pill btn-warning input_eduSuperior" style="padding: 5px;">Cargar Examen Ingreso</label>
+						                            			<div id="preview-7"></div>
+						                            		</div>
+						                            		<div class="col-sm-3">
+						                            			<input type="file" name="file-8" id="file-8" class="inputfile" onchange="PreviewImage('file-8','preview-8');">
+						                            			<label for="file-8" class="btn m-btn--pill btn-warning input_eduSuperior" style="padding: 5px;">Cargar Experiencia Laboral</label>
+						                            			<div id="preview-8"></div>
+						                            		</div>
+						                            	</div>                            	
+						                            </div>
+						                        </div>
+											</div>
+											<div class="col-sm-1"></div>
+										</div>
+									</div>
+									<br>
+									-->
+									<!--Septima Parte-->			
+									<div class="row col-sm-12">
+										<div class="row col-sm-12">
+											<div class="col-sm-4"></div>					
+											<div class="col-sm-4">
+												<center>
+													<button type="submit" class="input_eduSuperior btn m-btn--pill btn-warning">Registrar</button>
+												</center>
+											</div>					
+											<div class="col-sm-4"></div>					
+										</div>				
+									</div>
+								</form>
+								<div class="row">
+									<div class="col-sm-1"></div>
+									<div id="msn" class="col-sm-10"></div>
+									<div class="col-sm-1"></div>
 								</div>
-							</div>						
-						</div>
-						<div class="col-sm-1"></div>
-					</div>				
-				</div>
-				<br>
-				<!--Segunda Parte-->
-				<div class="row col-sm-12">
-					<div class="row col-sm-12">
-						<div class="col-sm-1"></div>					
-						<div class="col-sm-10">
-							<h3>
-								<span>2</span>
-								<span>FORMACION ACADEMICA</span>
-							</h3>	
-						</div>					
-						<div class="col-sm-1"></div>					
-					</div>
-					<div class="row col-sm-12">
-						<div class="col-sm-1"></div>
-						<div class="col-sm-10 bordes bordeSuperior">
-							<p>EDUCACION BASICA Y MEDIA</p>
-							<p>MARQUE CON UNA X EL ÚLTIMO GRADO APROBADO ( LOS GRADOS DE 1o. A 6o. DE BACHILLERATO EQUIVALEN A LOS GRADOS 6o. A 11o. DE EDUCACIÓN BÁSICA SECUNDARIA Y MEDIA )</p>
-							<center>
-								<table class="table-bordered table-bordered2">
-									<thead>
-										<tr>
-											<th colspan="11">EDUCACIÓN BÁSICA</th>
-											<th colspan="2">TÍTULO OBTENIDO<input type="text" name="titulo_obtenido"></th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td colspan="5">PRIMARIA</td>
-											<td colspan="4">SECUNDARIA</td>
-											<td colspan="2">MEDIA</td>
-											<td colspan="2">FECHA DE GRADO</td>
-										</tr>
-										<tr>
-											<td>1<input type="radio" name="ultm_grd_aprob" value="1"></td>
-											<td>2<input type="radio" name="ultm_grd_aprob" value="2"></td>
-											<td>3<input type="radio" name="ultm_grd_aprob" value="3"></td>
-											<td>4<input type="radio" name="ultm_grd_aprob" value="4"></td>
-											<td>5<input type="radio" name="ultm_grd_aprob" value="5"></td>
-											<td>6<input type="radio" name="ultm_grd_aprob" value="6"></td>
-											<td>7<input type="radio" name="ultm_grd_aprob" value="7"></td>
-											<td>8<input type="radio" name="ultm_grd_aprob" value="8"></td>
-											<td>9<input type="radio" name="ultm_grd_aprob" value="9"></td>
-											<td>10<input type="radio" name="ultm_grd_aprob" value="10"></td>
-											<td>11<input type="radio" name="ultm_grd_aprob" value="11"></td>
-											<td>MES<input class="input-mostrar linea" type="number" name="fecha_mes_grado"></td>
-											<td>AÑO<input class="input-mostrar linea" type="number" name="fecha_anio_grado"></td>
-										</tr>
-									</tbody>
-								</table>
-							</center>													
-						</div>
-						<div class="col-sm-1"></div>
-					</div>
-					<div class="row col-sm-12">
-						<div class="col-sm-1"></div>
-						<div class="col-sm-10 bordes">
-							<div class="row col-sm-12">
-								EDUCACION SUPERIOR (PREGRADO Y POSTGRADO)
-								DILIGENCIE ESTE PUNTO EN ESTRICTO ORDEN CRONOLÓGICO, EN MODALIDAD ACADÉMICA ESCRIBA:						
-								<div class="col-sm-3">
-									<label>TC (TÉCNICA)</label>
-									<label>ES (ESPECIALIZACIÓN)</label>
-								</div>
-								<div class="col-sm-3">
-									<label>TL (TECNOLÓGICA)</label>
-									<label>MG (MAESTRÍA O MAGISTER)</label>
-								</div>
-								<div class="col-sm-3">
-									<label>TE (TECNOLÓGICA ESPECIALIZADA)</label>
-									<label>DOC (DOCTORADO O PHD)</label>
-								</div>
-								<div class="col-sm-3">
-									<label>UN (UNIVERSITARIA)</label>
-									<label></label>
-								</div>
-								RELACIONE AL FRENTE EL NÚMERO DE LA TARJETA PROFESIONAL (SI ÉSTA HA SIDO PREVISTA EN UNA LEY).
 							</div>
 						</div>
-						<div class="col-sm-1"></div>
 					</div>
-					<div class="row col-sm-12">
-						<div class="col-sm-1"></div>
-						<div class="col-sm-10 bordes">
-							<div class="row">
-								<table class="table-bordered">
-									<thead>
-										<tr>
-											<th rowspan="2">Modalidad Academica</th>
-											<th rowspan="2">No. Semestres Aprobados</th>
-											<th colspan="2">Graduado</th>
-											<th rowspan="2">Nombre de los estudios</th>
-											<th colspan="2">Terminación</th>
-											<th rowspan="2">No. De Tarjeta PRofesional</th>
-										</tr>
-										<tr>
-											<td>SI</td>
-											<td>NO</td>
-											<td>MES</td>
-											<td>AÑO</td>      
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>
-												<select class="input-mostrar form-control m-input" id="" name="modalidad_academica_id_1">
-													<option value="1">T</option>
-													<option value="2">TC</option>
-													<option value="3">TE</option>
-													<option value="4">UN</option>
-													<option value="5">ES</option>
-													<option value="6">MG</option>
-													<option value="7">DOC</option>
-												</select>
-											</td>
-											<td><input class="input_eduSuperior input-mostrar" type="number" name="numero_semest_aprob_1"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="radio" name="graduado_1" value="S"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="radio" name="graduado_1" value="N"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="text" name="estudio_titulo_obte_1"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="number" name="fecha_mes_terminacion_1"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="number" name="fecha_anio_terminacion_1"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="number" name="num_tarjeta_prof_1"></td>
-										</tr>
-										<tr>
-											<td>
-												<select class="input-mostrar form-control m-input" id="" name="modalidad_academica_id_2">
-													<option value="1">T</option>
-													<option value="2">TC</option>
-													<option value="3">TE</option>
-													<option value="4">UN</option>
-													<option value="5">ES</option>
-													<option value="6">MG</option>
-													<option value="7">DOC</option>
-												</select>
-											</td>
-											<td><input class="input_eduSuperior input-mostrar" type="number" name="numero_semest_aprob_2"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="radio" name="graduado_2" value="S"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="radio" name="graduado_2" value="N"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="text" name="estudio_titulo_obte_2"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="number" name="fecha_mes_terminacion_2"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="number" name="fecha_anio_terminacion_2"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="number" name="num_tarjeta_prof_2"></td>
-										</tr>
-										<tr>
-											<td>
-												<select class="input-mostrar form-control m-input" id="" name="modalidad_academica_id_3">
-													<option value="1">T</option>
-													<option value="2">TC</option>
-													<option value="3">TE</option>
-													<option value="4">UN</option>
-													<option value="5">ES</option>
-													<option value="6">MG</option>
-													<option value="7">DOC</option>
-												</select>
-											</td>
-											<td><input class="input_eduSuperior input-mostrar" type="number" name="numero_semest_aprob_3"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="radio" name="graduado_3" value="S"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="radio" name="graduado_3" value="N"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="text" name="estudio_titulo_obte_3"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="number" name="fecha_mes_terminacion_3"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="number" name="fecha_anio_terminacion_3"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="number" name="num_tarjeta_prof_3"></td>
-										</tr>
-										<tr>
-											<td>
-												<select class="input-mostrar form-control m-input" id="" name="modalidad_academica_id_4">
-													<option value="1">T</option>
-													<option value="2">TC</option>
-													<option value="3">TE</option>
-													<option value="4">UN</option>
-													<option value="5">ES</option>
-													<option value="6">MG</option>
-													<option value="7">DOC</option>
-												</select>
-											</td>
-											<td><input class="input_eduSuperior input-mostrar" type="number" name="numero_semest_aprob_4"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="radio" name="graduado_4" value="S"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="radio" name="graduado_4" value="N"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="text" name="estudio_titulo_obte_4"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="number" name="fecha_mes_terminacion_4"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="number" name="fecha_anio_terminacion_4"></td>
-											<td><input class="input_eduSuperior input-mostrar" type="number" name="num_tarjeta_prof_4"></td>
-										</tr>										  
-									</tbody>
-								</table>
-							</div>						
-						</div>
-						<div class="col-sm-1"></div>
-					</div>				
-				</div>
-				<br>
-				<!--Tercera Parte-->
-				<div class="row col-sm-12">
-					<div class="row col-sm-12">
-						<div class="col-sm-1"></div>					
-						<div class="col-sm-10">
-							<h3>
-								<span>3</span>
-								<span>EXPERIENCIA LABORAL</span>
-							</h3>
-							<div class="row">
-								<div class="col-sm-12 bordes bordeSuperior">
-									<center>
-										<label>EMPLEO ACTUAL O CONTRATO VIGENTE</label>
-										<input type="hidden" name="estado_contrato_1" value="1">
-									</center>
-								</div>
-								<div class="col-sm-12 bordes">
-									<div class="row">
-										<div class="col-sm-6 bordeVertical">
-											<label>EMPRESA O ENTIDAD</label>
-											<input class="input-mostrar input_eduSuperior" type="text" name="empresa_entidad_1"/>
-										</div>
-										<div class="col-sm-1 bordeVertical">
-											<label class="row">PUBLICA</label>
-											<input class="input-mostrar input_eduSuperior" type="radio" name="tipo_1" value="PUBLICA" />
-										</div>
-										<div class="col-sm-1 bordeVertical">
-											<label class="row">PRIVADA</label>
-											<input class="input-mostrar input_eduSuperior" type="radio" name="tipo_1" value="PRIVADA" />
-										</div>
-										<div class="col-sm-4">
-											<label>PAIS</label>
-											<!--<input class="input-mostrar input_eduSuperior" type="text" name=""/>-->
-											<select class="input-mostrar form-control m-input" id="" name="pais_1">
-												<option value="Colombia">Colombia</option>
-												<option value="Venezuela">Venezuela</option>
-												<option value="Perú">Perú</option>
-												<option value="Ecuador">Ecuador</option>
-												<option value="Panama">Panama</option>
-											</select>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 bordes">
-									<div class="row">
-										<div class="col-sm-4 bordeVertical">
-											<label>DEPARTAMENTO</label>
-											<!--<input class="input-mostrar input_eduSuperior" type="text" name=""/>-->
-											<select class="input-mostrar form-control m-input" id="" name="departamento_1">
-												<option value="1">Norte De Santander</option>
-												<option value="1">Santander</option>
-												<option value="1">Cundinamarca</option>
-												<option value="1">Cauca</option>
-												<option value="1">Cesar</option>
-											</select>
-										</div>
-										<div class="col-sm-4 bordeVertical">
-											<label>MUNICIPIO</label>
-											<!--<input class="input-mostrar input_eduSuperior" type="text" name=""/>-->
-											<select class="input-mostrar form-control m-input" id="" name="municipio_1">
-												<option value="5">Cucuta</option>
-												<option value="5">Los Patios</option>
-												<option value="5">Chinacota</option>
-												<option value="5">Bochalema</option>
-												<option value="5">Toledo</option>
-											</select>
-										</div>
-										<div class="col-sm-4">
-											<label>CORREO ELECTRONICO ENTIDAD</label>
-											<input class="input-mostrar input_eduSuperior" type="text" name="correo_entidad_1"/>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 bordes">
-									<div class="row">
-										<div class="col-sm-4 bordeVertical">
-											<label>TELEFONO</label>
-											<input class="input-mostrar input_eduSuperior" type="text" name="telefono_entidad_1"/>
-										</div>
-										<div class="col-sm-4 bordeVertical">
-											<label>FECHA DE INGRESO</label>
-											<input class="input-mostrar input_eduSuperior" type="date" name="fecha_ingreso_1"/>
-										</div>
-										<div class="col-sm-4">
-											<label>FECHA DE RETIRO</label>
-											<input class="input-mostrar input_eduSuperior" type="date" name="fecha_retiro_1"/>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 bordes">
-									<div class="row">
-										<div class="col-sm-4 bordeVertical">
-											<label>CARGO O CONTRATO</label>
-											<input class="input-mostrar input_eduSuperior" type="text" name="cargo_contratado_1"/>
-										</div>
-										<div class="col-sm-4 bordeVertical">
-											<label>DEPENDENCIA</label>
-											<input class="input-mostrar input_eduSuperior" type="text" name="dependencia_1"/>
-										</div>
-										<div class="col-sm-4">
-											<label>DIRECCION</label>
-											<input class="input-mostrar input_eduSuperior" type="text" name="direccion_1"/>
-										</div>
-									</div>
-								</div>
-							</div>							
-							<div class="row">
-								<div class="col-sm-12 bordes bordeSuperior">
-									<center>
-										<label>EMPLEO ACTUAL O CONTRATO ANTERIOR</label>
-										<input type="hidden" name="estado_contrato_2" value="0">
-									</center>
-								</div>
-								<div class="col-sm-12 bordes">
-									<div class="row">
-										<div class="col-sm-6 bordeVertical">
-											<label>EMPRESA O ENTIDAD</label>
-											<input class="input-mostrar input_eduSuperior" type="text" name="empresa_entidad_2"/>
-										</div>
-										<div class="col-sm-1 bordeVertical">
-											<label class="row">PUBLICA</label>
-											<input class="input-mostrar input_eduSuperior" type="radio" name="tipo_2" value="PUBLICA" />
-										</div>
-										<div class="col-sm-1 bordeVertical">
-											<label class="row">PRIVADA</label>
-											<input class="input-mostrar input_eduSuperior" type="radio" name="tipo_2" value="PRIVADA" />
-										</div>
-										<div class="col-sm-4">
-											<label>PAIS</label>
-											<!--<input class="input-mostrar input_eduSuperior" type="text" name=""/>-->
-											<select class="input-mostrar form-control m-input" id="" name="pais_2">
-												<option value="Colombia">Colombia</option>
-												<option value="Venezuela">Venezuela</option>
-												<option value="Perú">Perú</option>
-												<option value="Ecuador">Ecuador</option>
-												<option value="Panama">Panama</option>
-											</select>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 bordes">
-									<div class="row">
-										<div class="col-sm-4 bordeVertical">
-											<label>DEPARTAMENTO</label>
-											<!--<input class="input-mostrar input_eduSuperior" type="text" name=""/>-->
-											<select class="input-mostrar form-control m-input" id="" name="departamento_2">
-												<option value="1">Norte De Santander</option>
-												<option value="1">Santander</option>
-												<option value="1">Cundinamarca</option>
-												<option value="1">Cauca</option>
-												<option value="1">Cesar</option>
-											</select>
-										</div>
-										<div class="col-sm-4 bordeVertical">
-											<label>MUNICIPIO</label>
-											<!--<input class="input-mostrar input_eduSuperior" type="text" name=""/>-->
-											<select class="input-mostrar form-control m-input" id="" name="municipio_2">
-												<option value="5">Cucuta</option>
-												<option value="5">Los Patios</option>
-												<option value="5">Chinacota</option>
-												<option value="5">Bochalema</option>
-												<option value="5">Toledo</option>
-											</select>
-										</div>
-										<div class="col-sm-4">
-											<label>CORREO ELECTRONICO ENTIDAD</label>
-											<input class="input-mostrar input_eduSuperior" type="text" name="correo_entidad_2"/>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 bordes">
-									<div class="row">
-										<div class="col-sm-4 bordeVertical">
-											<label>TELEFONO</label>
-											<input class="input-mostrar input_eduSuperior" type="text" name="telefono_entidad_2"/>
-										</div>
-										<div class="col-sm-4 bordeVertical">
-											<label>FECHA DE INGRESO</label>
-											<input class="input-mostrar input_eduSuperior" type="date" name="fecha_ingreso_2"/>
-										</div>
-										<div class="col-sm-4">
-											<label>FECHA DE RETIRO</label>
-											<input class="input-mostrar input_eduSuperior" type="date" name="fecha_retiro_2"/>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 bordes">
-									<div class="row">
-										<div class="col-sm-4 bordeVertical">
-											<label>CARGO O CONTRATO</label>
-											<input class="input-mostrar input_eduSuperior" type="text" name="cargo_contratado_2"/>
-										</div>
-										<div class="col-sm-4 bordeVertical">
-											<label>DEPENDENCIA</label>
-											<input class="input-mostrar input_eduSuperior" type="text" name="dependencia_2"/>
-										</div>
-										<div class="col-sm-4">
-											<label>DIRECCION</label>
-											<input class="input-mostrar input_eduSuperior" type="text" name="direccion_2"/>
-										</div>
-									</div>
-								</div>
-							</div>							
-							<div class="row">
-								<div class="col-sm-12 bordes bordeSuperior">
-									<center>
-										<label>EMPLEO ACTUAL O CONTRATO ANTERIOR</label>
-										<input type="hidden" name="estado_contrato_3" value="0">
-									</center>
-								</div>
-								<div class="col-sm-12 bordes">
-									<div class="row">
-										<div class="col-sm-6 bordeVertical">
-											<label>EMPRESA O ENTIDAD</label>
-											<input class="input-mostrar input_eduSuperior" type="text" name="empresa_entidad_3"/>
-										</div>
-										<div class="col-sm-1 bordeVertical">
-											<label class="row">PUBLICA</label>
-											<input class="input-mostrar input_eduSuperior" type="radio" name="tipo_3" value="PUBLICA" />
-										</div>
-										<div class="col-sm-1 bordeVertical">
-											<label class="row">PRIVADA</label>
-											<input class="input-mostrar input_eduSuperior" type="radio" name="tipo_3" value="PRIVADA" />
-										</div>
-										<div class="col-sm-4">
-											<label>PAIS</label>
-											<!--<input class="input-mostrar input_eduSuperior" type="text" name=""/>-->
-											<select class="input-mostrar form-control m-input" id="" name="pais_3">
-												<option value="Colombia">Colombia</option>
-												<option value="Venezuela">Venezuela</option>
-												<option value="Perú">Perú</option>
-												<option value="Ecuador">Ecuador</option>
-												<option value="Panama">Panama</option>>
-											</select>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 bordes">
-									<div class="row">
-										<div class="col-sm-4 bordeVertical">
-											<label>DEPARTAMENTO</label>
-											<!--<input class="input-mostrar input_eduSuperior" type="text" name=""/>-->
-											<select class="input-mostrar form-control m-input" id="" name="departamento_3">
-												<option value="1">Norte De Santander</option>
-												<option value="1">Santander</option>
-												<option value="1">Cundinamarca</option>
-												<option value="1">Cauca</option>
-												<option value="1">Cesar</option>
-											</select>
-										</div>
-										<div class="col-sm-4 bordeVertical">
-											<label>MUNICIPIO</label>
-											<!--<input class="input-mostrar input_eduSuperior" type="text" name=""/>-->
-											<select class="input-mostrar form-control m-input" id="" name="municipio_3">
-												<option value="5">Cucuta</option>
-												<option value="5">Los Patios</option>
-												<option value="5">Chinacota</option>
-												<option value="5">Bochalema</option>
-												<option value="5">Toledo</option>
-											</select>
-										</div>
-										<div class="col-sm-4">
-											<label>CORREO ELECTRONICO ENTIDAD</label>
-											<input class="input-mostrar input_eduSuperior" type="text" name="correo_entidad_3"/>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 bordes">
-									<div class="row">
-										<div class="col-sm-4 bordeVertical">
-											<label>TELEFONO</label>
-											<input class="input-mostrar input_eduSuperior" type="text" name="telefono_entidad_3"/>
-										</div>
-										<div class="col-sm-4 bordeVertical">
-											<label>FECHA DE INGRESO</label>
-											<input class="input-mostrar input_eduSuperior" type="date" name="fecha_ingreso_3"/>
-										</div>
-										<div class="col-sm-4">
-											<label>FECHA DE RETIRO</label>
-											<input class="input-mostrar input_eduSuperior" type="date" name="fecha_retiro_3"/>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 bordes">
-									<div class="row">
-										<div class="col-sm-4 bordeVertical">
-											<label>CARGO O CONTRATO</label>
-											<input class="input-mostrar input_eduSuperior" type="text" name="cargo_contratado_3"/>
-										</div>
-										<div class="col-sm-4 bordeVertical">
-											<label>DEPENDENCIA</label>
-											<input class="input-mostrar input_eduSuperior" type="text" name="dependencia_3"/>
-										</div>
-										<div class="col-sm-4">
-											<label>DIRECCION</label>
-											<input class="input-mostrar input_eduSuperior" type="text" name="direccion_3"/>
-										</div>
-									</div>
-								</div>
-							</div>							
-						</div>					
-						<div class="col-sm-1"></div>					
-					</div>																							
-				</div>
-				<br>			
-				<!--Cuarta Parte-->
-				<div class="row col-sm-12">
-					<div class="row col-sm-12">
-						<div class="col-sm-1"></div>					
-						<div class="col-sm-10">
-							<h3>
-								<span>4</span>
-								<span>CIUDAD Y FECHA DE DILIGENCIAMIENTO</span>
-							</h3>
-						</div>					
-						<div class="col-sm-1"></div>					
-					</div>
-					<div class="row col-sm-12">
-						<div class="col-sm-1"></div>
-						<div class="col-sm-10 bordes bordeSuperior">
-							<p>MANIFIESTO BAJO LA GRAVEDAD DEL JURAMENTO QUE SI [O] NO [O] ME ENCUENTRO DENTRO DE LAS CAUSALES DE INHABILIDAD E INCOMPATIBILIDAD DEL ORDEN CONSTITUCIONAL O LEGAL, PARA EJERCER CARGOS EMPLEOS PÚBLICOS O PARA CELEBRAR CONTRATOS DE PRESTACIÓN DE SERVICIOS CON LA ADMINISTRACIÓN PÚBLICA.</p>
-							<p>PARA TODOS LOS EFECTOS LEGALES, CERTIFICO QUE LOS DATOS POR MI ANOTADOS EN EL PRESENTE FORMATO ÚNICO DE HOJA DE VIDA, SON VERACES, (ARTÍCULO 5o. DE LA LEY 190/95).</p>
-							<p> Ciudad y fecha de diligenciamiento
-								<input class="input-mostrar linea" type="text" name="ciudad_diligenciamiento">
-								<input class="input-mostrar linea" type="date" name="fecha_diligenciamiento">
-							</p>						
-						</div>
-						<div class="col-sm-1"></div>
-					</div>
-				</div>
-				<br>
-				<!--Quinta Parte-->
-				<div class="row col-sm-12">
-					<div class="row col-sm-12">
-						<div class="col-sm-1"></div>					
-						<div class="col-sm-10">
-							<h3>
-								<span>5</span>
-								<span>OBSERVACIONES</span>
-							</h3>
-						</div>					
-						<div class="col-sm-1"></div>					
-					</div>
-					<div class="row col-sm-12">
-						<div class="col-sm-1"></div>
-						<div class="col-sm-10 bordes bordeSuperior">
-							<p>CERTIFICO QUE LA INFORMACIÓN AQUÍ SUMINISTRADA HA SIDO CONSTATADA FRENTE A LOS DOCUMENTOS QUE HAN SIDO PRESENTADOS COMO SOPORTE.</p>
-							<textarea class="input_eduSuperior" rows="4" cols="50" name="observacion"></textarea>
-						</div>
-						<div class="col-sm-1"></div>
-					</div>
-				</div>
-				<br>
-				<!--Sexta Parte
-				<div class="row col-sm-12">				
-					<div class="row col-sm-12">
-						<div class="col-sm-1"></div>
-						<div class="col-sm-10">
-	                        <div class="row m-portlet m-portlet--mobile">
-	                            <div class="m-portlet__head">
-	                                <div class="m-portlet__head-caption">
-	                                    <div class="m-portlet__head-title">
-	                                		<h3>
-												<span>6</span>
-												<span>Anexos</span>
-											</h3> 
-	                                    </div>
-	                                </div>
-	                            </div>
-	                            <div class="m-portlet__body bordes bordeSuperior input_eduSuperior">
-	                            	<div class="row col-sm-12" style="height: 250px;">
-	                            		<div class="col-sm-3">
-	                            			<input type="file" name="file-1" id="file-1" class="inputfile" onchange="PreviewImage('file-1','preview-1');">
-	                            			<label for="file-1" class="btn m-btn--pill btn-warning input_eduSuperior" style="padding: 5px;">Cargar Cedula</label>
-	                            			<div id="preview-1"></div>
-	                            		</div>
-	                            		<div class="col-sm-3">
-	                            			<input type="file" name="file-2" id="file-2" class="inputfile" onchange="PreviewImage('file-2','preview-2');">
-	                            			<label for="file-2" class="btn m-btn--pill btn-warning input_eduSuperior" style="padding: 5px;">Cargar RUT</label>
-	                            			<div id="preview-2"></div>
-	                            		</div>
-	                            		<div class="col-sm-3">
-	                            			<input type="file" name="file-3" id="file-3" class="inputfile" onchange="PreviewImage('file-3','preview-3');">
-	                            			<label for="file-3" class="btn m-btn--pill btn-warning input_eduSuperior" style="padding: 5px;">Cargar Diploma</label>
-	                            			<div id="preview-3"></div>
-	                            		</div>
-	                            		<div class="col-sm-3">
-	                            			<input type="file" name="file-4" id="file-4" class="inputfile" onchange="PreviewImage('file-4','preview-4');">
-	                            			<label for="file-4" class="btn m-btn--pill btn-warning input_eduSuperior" style="padding: 5px;">Cargar Antecedente Contraloria</label>
-	                            			<div id="preview-4"></div>
-	                            		</div>
-	                            	</div>
-	                            	<div class="row col-sm-12" style="height: 250px;">
-	                            		<div class="col-sm-3">
-	                            			<input type="file" name="file-5" id="file-5" class="inputfile" onchange="PreviewImage('file-5','preview-5');">
-	                            			<label for="file-5" class="btn m-btn--pill btn-warning input_eduSuperior" style="padding: 5px;">Cargar Antecedente Procuraduria</label>
-	                            			<div id="preview-5"></div>
-	                            		</div>
-	                            		<div class="col-sm-3">
-	                            			<input type="file" name="file-6" id="file-6" class="inputfile" onchange="PreviewImage('file-6','preview-6');">
-	                            			<label for="file-6" class="btn m-btn--pill btn-warning input_eduSuperior" style="padding: 5px;">Cargar Antecedente Policial</label>
-	                            			<div id="preview-6"></div>
-	                            		</div>
-	                            		<div class="col-sm-3">
-	                            			<input type="file" name="file-7" id="file-7" class="inputfile" onchange="PreviewImage('file-7','preview-7');">
-	                            			<label for="file-7" class="btn m-btn--pill btn-warning input_eduSuperior" style="padding: 5px;">Cargar Examen Ingreso</label>
-	                            			<div id="preview-7"></div>
-	                            		</div>
-	                            		<div class="col-sm-3">
-	                            			<input type="file" name="file-8" id="file-8" class="inputfile" onchange="PreviewImage('file-8','preview-8');">
-	                            			<label for="file-8" class="btn m-btn--pill btn-warning input_eduSuperior" style="padding: 5px;">Cargar Experiencia Laboral</label>
-	                            			<div id="preview-8"></div>
-	                            		</div>
-	                            	</div>                            	
-	                            </div>
-	                        </div>
-						</div>
-						<div class="col-sm-1"></div>
-					</div>
-				</div>
-				<br>
-				-->
-				<!--Octava Parte-->			
-				<div class="row col-sm-12">
-					<div class="row col-sm-12">
-						<div class="col-sm-4"></div>					
-						<div class="col-sm-4">
-							<center>
-								<button type="submit" class="input_eduSuperior btn m-btn--pill btn-warning">Registrar</button>
-							</center>
-						</div>					
-						<div class="col-sm-4"></div>					
-					</div>				
-				</div>
-			</form>
-			<div class="row">
-				<div class="col-sm-1"></div>
-				<div id="msn" class="col-sm-10"></div>
-				<div class="col-sm-1"></div>
-			</div>
-		</div>
-	</div>
-</div>
 				</div>
 			</div>
 			<!-- end:: Body -->

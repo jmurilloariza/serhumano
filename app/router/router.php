@@ -66,7 +66,7 @@ class Router{
 			$array = array();
 			$array['rta'] = 'Registro Matricula Exitoso';
 			
-			$res_reg_matricula = $this->matriculaController->registrarMatricula($_POST['alumno_id'],$_POST['institucion_id'],1,$_POST['jornada'],$_POST['grado'],$_POST['grupo_curso'],$_POST['subsidiado'],$_POST['repitente'],$_POST['nie'],$_POST['saaa'],$_POST['cafaa'],$_POST['zra'],$_POST['amcf'],$_POST['bvfp'],$_POST['bhdmcf'],$_POST['bhn'],$_POST['pvc'],$_POST['ume'],$_POST['ude'],$_POST['sector_privado'],$_POST['pom'],$_POST['etnia'],$_POST['resguardo'],$_POST['sisben'],$_POST['direccion_residencia'],$_POST['telefono'],$_POST['lrm'],$_POST['lrd'],$_POST['estrato'],$_POST['anos_cumplidos'],$_POST['anexo_certif_ante']);
+			$res_reg_matricula = $this->matriculaController->registrarMatricula($_POST['alumno_id'],$_POST['institucion_id'],4,$_POST['jornada'],$_POST['grado'],$_POST['grupo_curso'],$_POST['subsidiado'],$_POST['repitente'],$_POST['nie'],$_POST['saaa'],$_POST['cafaa'],$_POST['zra'],$_POST['amcf'],$_POST['bvfp'],$_POST['bhdmcf'],$_POST['bhn'],$_POST['pvc'],$_POST['ume'],$_POST['ude'],$_POST['sector_privado'],$_POST['pom'],$_POST['etnia'],$_POST['resguardo'],$_POST['sisben'],$_POST['direccion_residencia'],$_POST['telefono'],$_POST['lrm'],$_POST['lrd'],$_POST['estrato'],$_POST['anos_cumplidos'],$_POST['anexo_certif_ante']);
 
 			return  json_encode($array);
 		});
@@ -83,6 +83,15 @@ class Router{
 		/**
 		 * Peticiones GET
 		*/
+		
+		$router->post('/matricula/validarEstudiante', function(){			
+			$array = array();
+			$array['nombre'] = 'Gerson';			
+			$res_validar_alumno = $this->matriculaController->verificarExistenciaMatriculaAlumno($_POST['tipo_documento_validacion'],$_POST['numero_documento_validacion']);
+
+			return  json_encode($array);
+		});
+
 		$router->get('/home', function (){
 			$modulos = null;
 			return $this->controllerView->render('home.html', $modulos);
