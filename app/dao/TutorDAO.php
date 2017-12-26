@@ -79,7 +79,7 @@ class tutorDAO{
 	    		array_push($array2, $data);
     		}
 
-    		$array = ($array+['message' => Respuesta::get(1)]);
+    		$array = ($array+['respuesta' => Respuesta::get(1)]);
     		$array = ($array+['data' => $array2]);
 
     		return json_encode($array);
@@ -101,7 +101,7 @@ class tutorDAO{
 
             if($prepared->rowCount()>0){
                 $row = $prepared->fetch(PDO::FETCH_ASSOC);
-                $tutor = (['message' => Respuesta::get(2)]);
+                $tutor = (['respuesta' => Respuesta::get(2)]);
     			$tutor = ($tutor+['data' => $row]);
     			return $tutor;
             }
