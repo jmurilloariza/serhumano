@@ -80,6 +80,7 @@ class MatriculaController
 			if( is_numeric($alumno_id) && is_numeric($institucion_id) && is_numeric($tutor_id) && is_string($jornada) && is_string($grado) && is_string($grupo_curso) && is_string($subsidiado) && is_string($repitente) && is_string($nie) && is_string($saaa) && is_string($cafaa) && is_string($zra) && is_string($amcf) && is_string($bvfp) && is_string($bhdmcf) && is_string($bhn) && is_string($pvc) && is_string($ume) && is_string($ude) && is_string($sector_privado) && is_string($pom) && is_string($etnia) && is_string($resguardo) && is_string($sisben) && is_string($direccion_residencia) && is_string($telefono) && is_string($lrm) && is_string($lrd) && is_string($estrato) && is_string($anos_cumplidos)){
 
 					echo "Son de acuerdo al tipo (OK)<br>";
+					return true;
 					
 			}
 
@@ -96,22 +97,14 @@ class MatriculaController
 		$jsondata = array();
 		$jsondata = $this->matriculaModel->verificarExistenciaMatriculaAlumno($tipo_documento , $numero_documento );
 
-		if($jsondata['SUCCES'] == -1){
-			echo "Error en la verificacion ".$jsondata['error'];
-			return $jsondata;
-		}
+		if($jsondata['respuesta']['codigo'] == 0 || $jsondata['respuesta']['codigo'] = 101 ){
+			$alumnoDTO = new AlumnoDTO();
+			$alumnoDTO->setTipo_documento($tipo_documento); 
+			$alumnoDTO->setNumero_documento($numero_documento);
+			$jsondata['data'] = $this->alumnoModel->consultarAlumno($alumnoDTO);
 			
-		if($jsondata['SUCCES'] == 1){
-			echo "El alumno presenta matricula activa en la institucion ".$jsondata['establecimiento_educativo'];
-		}elseif($jsondata['SUCCES'] == 0){
-			echo "No existe una matricula asociada al alumno en este año";
+			var_dump($jsondata);
 		}
-
-		$alumnoDTO = new AlumnoDTO();
-		$alumnoDTO->setTipo_documento($tipo_documento); 
-		$alumnoDTO->setNumero_documento($numero_documento);
-		$jsondata['alumno'] = $this->alumnoModel->consultarAlumno($alumnoDTO);
-		var_dump($jsondata);
 
 	}
 

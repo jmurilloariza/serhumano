@@ -99,18 +99,26 @@ class MatriculaDAO
 				//Encontro un registro de maticula en una institucion educativa
 				$datos = $prepared->fetch(PDO::FETCH_ASSOC);
 				//Guarda el nombre del establecimiento edcativo donde esta matriculado el alumno
+				/*
+				$jsondata['tipo_documento'] = $datos['tipo_documento'];
+				$jsondata['numero_documento'] = $datos['numero_documento'];
 				$jsondata['establecimiento_educativo'] = $datos['establecimiento_educativo'];
-				$jsondata['SUCCES'] = 1;
+				*/
+				$jsondata['data'] = $datos;
+				$jsondata['respuesta'] = Respuesta::get(101);
+				//var_dump($jsondata);
 				return $jsondata;
 				
 			}
-			
-			$jsondata['SUCCES'] = 0;
+			$jsondata['data'] = NULL;
+			$jsondata['respuesta'] = Respuesta::get(0);
+			//var_dump($jsondata);
 			return $jsondata;
 
 		} catch (PDOException $e) {
-			$jsondata['SUCCES'] = -1;
-			$jsondata['error'] = $e->getMessage();
+			$jsondata['respuesta'] = Respuesta::get(0);
+			$jsondata['data'] = $e->getMessage();
+			var_dump($jsondata);
 			return $jsondata;
 			
 		}

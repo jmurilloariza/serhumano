@@ -62,8 +62,6 @@ class AlumnoDAO
 		$statement ="SELECT `alumno_id`, `tipo_documento`, `numero_documento`, `lugar_exp_mun`, `lugar_exp_depto`, `apellido_1`, `apellido_2`, `nombre_1`, `nombre_2`, `fecha_nac`, `lugar_nac_mun`, `lugar_nac_depto`, `genero`, `discapacidad`, `cap_excepcionales`, `anexo_documento` FROM `alumnos` WHERE `tipo_documento` = :tipo_documento AND `numero_documento` = :numero_documento" ;
 
 			$prepared = $db->prepare($statement);
-			echo "x ->".$alumnoDTO->getTipo_documento()."<br>";
-			echo "y->".$alumnoDTO->getNumero_documento()."<br>";
 			$prepared->execute([
 				'tipo_documento'=> $alumnoDTO->getTipo_documento() ,
 				'numero_documento'=> $alumnoDTO->getNumero_documento()
@@ -73,7 +71,6 @@ class AlumnoDAO
 			if($prepared->rowCount()>0){
 				$prepared->setFetchMode(PDO::FETCH_CLASS, 'AlumnoDTO');
 				$alumno = array();
-				$jsondata['SUCCES'] = 1;
 	  			$alumnoDTO = $prepared->fetch();
 	  				
   				$alumno['alumno_id'] = $alumnoDTO->getAlumno_id();
@@ -93,17 +90,18 @@ class AlumnoDAO
   				$alumno['cap_excepcionales'] = $alumnoDTO->getCap_excepcionales();
   				$alumno['anexo_documento'] = $alumnoDTO->getAnexo_documento();
 
-  				$jsondata['alumno'] = $alumno;
+  				$jsondata['respuesta'] = Respuesta::get(2); 
+  				$jsondata['data'] = $alumno;
   				return $jsondata;
 
 			}
 
-				$jsondata['SUCCES'] = 0;
+				$jsondata['respuesta'] = Respuesta::get(0);
 				return $jsondata;
 			
 			} catch ( PDOException  $e ) {
-				$jsondata['SUCCES'] = -1;
-				echo "ERROR DE CONSULTA" . $e->getMessage();
+				$jsondata['respuesta'] = Respuesta::get(109);
+				$jsondata['data'] = $e->getMessage();
 				return $jsondata;
   
 			}	
