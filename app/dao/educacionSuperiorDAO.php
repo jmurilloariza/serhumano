@@ -14,8 +14,6 @@ class EducacionSuperiorDAO{
 	public function registrarEducacionSuperior($educacionSuperiorDTO){
 		$db = DB::getInstance();
 
-		echo 'asdasdasda';
-
 		$query = "INSERT INTO `educacion_superior` (`modalidad_academica_id`, `tutor`, `numero_semest_aprob`, `graduado`, `estudio_titulo_obte`, `fecha_terminacion`, `num_tarjeta_prof`) VALUES (:modalidad_academica_id, :tutor, :numero_semest_aprob, :graduado, :estudio_titulo_obte, :fecha_terminacion, :num_tarjeta_prof)";
 		
 		$prepared = $db->prepare($query);
@@ -30,15 +28,13 @@ class EducacionSuperiorDAO{
 				'num_tarjeta_prof' => $educacionSuperiorDTO->getNumTarjetaProf()
 			]);
 
-			echo $prepared->errorInfo();
             if($prepared->rowCount() > 0){
                 return 0;
             }else{
                 return 1;
             }
         } catch (PDOException $e) {
-            echo ($prepared->errorInfo());
-            echo $e;
+            echo $e->getMessage();
             return 1;
         }
 	}

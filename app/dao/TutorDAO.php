@@ -15,12 +15,7 @@ class tutorDAO{
 	public function registrarTutor($tutorDTO){
 		$db = DB::getInstance();
 
-		$query = "INSERT INTO `tutores` (`nombres`, `apellido1`, `apellido2`, `tipo_doc`, `numero`, `sexo`, `nacionalidad`, `lbrta_mil_clase`, 
-                    `num_lbrta_mil`, `dm`, `fecha_nacim`, `pais_nacim`, `depto_nacim`, `mun_nacim`, `direccion_corresp`, `pais_corresp`, `depto_corresp`, 
-                    `mun_corresp`, `telefono`, `email`, `ultm_grd_aprob`, `titulo_obtenido`, `fecha_grado`, `fecha_dilig`, `ciudad_dilig`, `observaciones`) 
-                    VALUES (:nombres, :apellido1, :apellido2, :tipo_doc, :numero, :sexo, :nacionalidad, :lbrta_mil_clase, :num_lbrta_mil, :dm, 
-                    :fecha_nacim, :pais_nacim, :depto_nacim, :mun_nacim, :direccion_corresp, :pais_corresp, :depto_corresp, :mun_corresp, :telefono, 
-                    :email, :ultm_grd_aprob, :titulo_obtenido, :fecha_grado, :fecha_dilig, :ciudad_dilig, :observaciones);";
+		$query = "INSERT INTO `tutores` (`nombres`, `apellido1`, `apellido2`, `tipo_doc`, `numero`, `sexo`, `nacionalidad`, `lbrta_mil_clase`, `num_lbrta_mil`, `dm`, `fecha_nacim`, `pais_nacim`, `depto_nacim`, `mun_nacim`, `direccion_corresp`, `pais_corresp`, `depto_corresp`, `mun_corresp`, `telefono`, `email`, `ultm_grd_aprob`, `titulo_obtenido`, `fecha_grado`, `fecha_dilig`, `ciudad_dilig`, `observaciones`) VALUES (:nombres, :apellido1, :apellido2, :tipo_doc, :numero, :sexo, :nacionalidad, :lbrta_mil_clase, :num_lbrta_mil, :dm, :fecha_nacim, :pais_nacim, :depto_nacim, :mun_nacim, :direccion_corresp, :pais_corresp, :depto_corresp, :mun_corresp, :telefono, :email, :ultm_grd_aprob, :titulo_obtenido, :fecha_grado, :fecha_dilig, :ciudad_dilig, :observaciones);";
 
 		$prepared = $db->prepare($query);
         try {
@@ -60,7 +55,7 @@ class tutorDAO{
             }
         } catch (PDOException $e) {
             echo json_encode($prepared->errorInfo());
-            echo $e;
+            echo $e->getMessage();
             return -2;
         }
 

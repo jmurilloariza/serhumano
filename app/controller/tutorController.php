@@ -83,7 +83,7 @@ class TutorController {
             return 'Ha ocurido un error en el registro de los datos personales';
         }
 
-        $educaciones = json_decode($$educaciones_superiores);
+        $educaciones = json_decode($educaciones_superiores);
 
         foreach ($educaciones as $edu) {
             $resp = $this->registrarEducacionSuperior($edu->modalidad_academica_id, $id_tutor,
@@ -97,7 +97,6 @@ class TutorController {
         }
 
         $experiencias = json_decode($experiencias_laborales);
-
         foreach ($experiencias as $exp) {
             $resp = $this->registrarExperienciaLaboral($id_tutor, $exp->empresa_entidad, $exp->tipo,
                 $exp->pais, $exp->departamento, $exp->municipio, $exp->correo_entidad,
@@ -177,7 +176,7 @@ class TutorController {
         if(!Util::validarString([$nombres, $apellido1, $tipo_doc, $numero, $sexo, $pais_nacim,
                 $depto_nacim, $mun_nacim, $direccion_corresp, $pais_corresp, $depto_corresp,
                 $mun_corresp, $telefono, $email, $ultm_grd_aprob, $ciudad_dilig, $observaciones]) ||
-                !Util::validarDate([$fecha_nacim, $fecha_grado, $fecha_dilig])){
+                !Util::validarDate([$fecha_nacim, $fecha_grado, $fecha_dilig])) {
             return 'Datos personales Invalidos';
         }
 
@@ -221,6 +220,7 @@ class TutorController {
     private function registrarExperienciaLaboral($tutor, $empresa_entidad, $tipo, $pais, $departamento,
                 $municipio, $correo_entidad, $telefono, $fecha_ingreso, $fecha_retiro, $cargo_contratado,
                 $dependencia, $direccion, $estado_contrato){
+
         if(!Util::validarString([$empresa_entidad, $tipo, $pais, $departamento, $municipio, $telefono,
                 $cargo_contratado, $dependencia, $direccion, $estado_contrato]) || !Util::validarNumber([$tutor]) ||
                 !Util::validarDate([$fecha_ingreso, $fecha_retiro])){

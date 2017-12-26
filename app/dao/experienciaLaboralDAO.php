@@ -14,9 +14,13 @@ class ExperienciaLaboralDAO{
 	public function registrarExperienciaLaboral($experienciaLaboralDTO){
 		$db = DB::getInstance();
 	
-		$query = "INSERT INTO `experiencia_laboral` (`tutor`, `empresa_entidad`, `tipo`, `pais`, `depto`, `mun`, `correo_entidad`, `telefono`, `fecha_ingreso`, `fecha_retiro`, `cargo_contratado`, `dependencia`, `direccion`, `estado_contrato`) VALUES (:tutor, :empresa_entidad, :tipo, :pais, :departamento, :municipio, :correo_entidad, :telefono, :fecha_ingreso, :fecha_retiro, :cargo_contratado, :dependencia, :direccion, :estado_contrato)";
+		$query = "INSERT INTO `experiencia_laboral` (`tutor`, `empresa_entidad`, `tipo`, `pais`, `depto`, `mun`, `correo_entidad`, 
+                `telefono`, `fecha_ingreso`, `fecha_retiro`, `cargo_contratado`, `dependencia`, `direccion`, `estado_contrato`) VALUES (:tutor, 
+                :empresa_entidad, :tipo, :pais, :depto, :mun, :correo_entidad, :telefono, :fecha_ingreso, :fecha_retiro, :cargo_contratado, 
+                :dependencia, :direccion, :estado_contrato)";
 		
 		$prepared = $db->prepare($query);
+
 		try {
 			$prepared->execute([
 				'tutor' => $experienciaLaboralDTO->getTutor(), 
