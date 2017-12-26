@@ -65,7 +65,7 @@ class Respuesta{
 		101 => [
 			'codigo' => 101, 
 			'msj' => 'Ya existe un registro', 
-			'tipo' => 'Error'
+			'tipo' => 'Warning'
 		],
 		102 => [
 			'codigo' => 102, 

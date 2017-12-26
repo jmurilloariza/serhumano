@@ -96,12 +96,12 @@ class MatriculaController
 	{
 		$jsondata = array();
 		$jsondata = $this->matriculaModel->verificarExistenciaMatriculaAlumno($tipo_documento , $numero_documento );
-
-		if($jsondata['respuesta']['codigo'] == 0 || $jsondata['respuesta']['codigo'] = 101 ){
+		
+		if($jsondata['respuesta']['codigo'] == 0 || $jsondata['respuesta']['codigo'] = 2 ){
 			$alumnoDTO = new AlumnoDTO();
 			$alumnoDTO->setTipo_documento($tipo_documento); 
 			$alumnoDTO->setNumero_documento($numero_documento);
-			$jsondata['data'] = $this->alumnoModel->consultarAlumno($alumnoDTO);
+			$jsondata['alumno'] = $this->alumnoModel->consultarAlumno($alumnoDTO);
 			
 			var_dump($jsondata);
 		}

@@ -5,6 +5,7 @@
 */
 
 require_once 'app/core/conexiondb.php';
+
 class CargaDAO
 {
 	
@@ -24,6 +25,7 @@ class CargaDAO
 			
 			$prepared->execute();
 			$departamentos = array();
+			$jsondata = array();
 			if($prepared->rowCount()>0){
 				//Se obtuvieron los departamentos
 				$i=0;
@@ -34,10 +36,16 @@ class CargaDAO
 					$departamentos[$i] = $departamento;
 					$i++;
 			 	}
-				var_dump($departamentos);
+			 	$jsondata['respuesta'] = Respuesta::get(2);
+				$jsondata['data'] = $departamentos;
+				echo json_decode($jsondata);
+				return;
 				
 			}
-				
+			$jsondata['respuesta'] = Respuesta::get(0);
+			$jsondata['data'] = NULL;
+			echo json_decode($jsondata);
+			return;	
 			
 		} catch ( PDOException  $e ) {
 			echo $e->getMessage();
