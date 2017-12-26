@@ -6,7 +6,7 @@
 
 require_once 'app/core/conexiondb.php';
 
-class TutorDAO{
+class tutorDAO{
 	
 	function __construct(){
 		
@@ -66,6 +66,65 @@ class TutorDAO{
         }
 
 	}
+
+    public function listarTutores(){
+    	try {
+    		$db = DB::getInstance();
+    		$query = "SELECT `tutor_id`, `nombres`, `apellido1`, `apellido2`, `tipo_doc`, `numero`, `sexo`, `nacionalidad`, `lbrta_mil_clase`, `num_lbrta_mil`, `DM`, `fecha_nacim`, `pais_nacim`, `depto_nacim`, `mun_nacim`, `direccion_corresp`, `pais_corresp`, `depto_corresp`, `mun_corresp`, `telefono`, `email`, `ultm_grd_aprob`, `titulo_obtenido`, `fecha_grado`, `fecha_dilig`, `ciudad_dilig`, `observaciones` FROM `tutores`";
+
+    		$prepared = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
+    		$prepared->execute();
+
+    		if($prepared->rowCount() < 1){
+    			return json_encode(Respuesta::get(0));
+    		}
+
+    		$array = array();
+    		$array2 = array();
+    		while ($data = $prepared->fetch(PDO::FETCH_ASSOC, PDO::FETCH_ORI_NEXT)){
+	    		array_push($array2, $data);
+    		}
+
+    		$array = ($array+['message' => Respuesta::get(1)]);
+    		$array = ($array+['data' => $array2]);
+
+    		return json_encode($array);
+    	} catch (PDOException $e) {
+    		return json_encode(Respuesta::get(-2));
+    	}
+    }
+
+    public function obtenerDatosTutor($tutorDTO){
+        try {
+            $db = DB::getInstance();
+            $query = "SELECT `tutor_id`, `nombres`, `apellido1`, `apellido2`, `tipo_doc`, `numero`, `sexo`, `nacionalidad`, `lbrta_mil_clase`, `num_lbrta_mil`, `DM`, `fecha_nacim`, `pais_nacim`, `depto_nacim`, `mun_nacim`, `direccion_corresp`, `pais_corresp`, `depto_corresp`, `mun_corresp`, `telefono`, `email`, `ultm_grd_aprob`, `titulo_obtenido`, `fecha_grado`, `fecha_dilig`, `ciudad_dilig`, `observaciones` FROM `tutores` WHERE `tipo_doc` = :tipo_doc AND `numero` = :numero";
+
+            $prepared = $db->prepare($query);
+            $prepared->execute([
+                'tipo_doc'=> $tutorDTO->getTipoDoc(),
+                'numero'=> $tutorDTO->getNumero()
+            ]);
+
+            if($prepared->rowCount()>0){
+                $row = $prepared->fetch(PDO::FETCH_ASSOC);
+                $tutor = (['message' => Respuesta::get(2)]);
+    			$tutor = ($tutor+['data' => $row]);
+    			return $tutor;
+            }
+
+            return Respuesta::get(0);
+        } catch (PDOException $e) {
+            return Respuesta::get(-2);
+        }
+    }
+
+    public function eliminarTutor($tutorDTO){
+
+    }
+
+    public function actualizarTutor($cedula, $tutorDTO){
+
+    }
 }
 
  ?>

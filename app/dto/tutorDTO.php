@@ -33,9 +33,70 @@ class TutorDTO{
     private $ciudad_dilig;
     private $observaciones;
 
-    public function __construct(){
-        
+
+    /**
+     * Class Constructor
+     * @param    $tutor_id   
+     * @param    $nombres   
+     * @param    $apellido1   
+     * @param    $apellido2   
+     * @param    $tipo_doc   
+     * @param    $numero   
+     * @param    $sexo   
+     * @param    $nacionalidad   
+     * @param    $lbrta_mil_clase   
+     * @param    $num_lbrta_mil   
+     * @param    $dm   
+     * @param    $fecha_nacim   
+     * @param    $pais_nacim   
+     * @param    $depto_nacim   
+     * @param    $mun_nacim   
+     * @param    $direccion_corresp   
+     * @param    $pais_corresp   
+     * @param    $depto_corresp   
+     * @param    $mun_corresp   
+     * @param    $telefono   
+     * @param    $email   
+     * @param    $ultm_grd_aprob   
+     * @param    $titulo_obtenido   
+     * @param    $fecha_grado   
+     * @param    $fecha_dilig   
+     * @param    $ciudad_dilig   
+     * @param    $observaciones   
+     */
+    
+    public function __construct($nombres = '', $apellido1 = '', $apellido2 = '', $tipo_doc = '', $numero = '', $sexo = '', $nacionalidad = '', $lbrta_mil_clase = '', $num_lbrta_mil = '', $dm = '', $fecha_nacim = '', $pais_nacim = '', $depto_nacim = '', $mun_nacim = '', $direccion_corresp = '', $pais_corresp = '', $depto_corresp = '', $mun_corresp = '', $telefono = '', $email = '', $ultm_grd_aprob = '', $titulo_obtenido = '', $fecha_grado = '', $fecha_dilig = '', $ciudad_dilig = '', $observaciones = '') {
+
+        $this->tutor_id = '';
+        $this->nombres = $nombres;
+        $this->apellido1 = $apellido1;
+        $this->apellido2 = $apellido2;
+        $this->tipo_doc = $tipo_doc;
+        $this->numero = $numero;
+        $this->sexo = $sexo;
+        $this->nacionalidad = $nacionalidad;
+        $this->lbrta_mil_clase = $lbrta_mil_clase;
+        $this->num_lbrta_mil = $num_lbrta_mil;
+        $this->dm = $dm;
+        $this->fecha_nacim = $fecha_nacim;
+        $this->pais_nacim = $pais_nacim;
+        $this->depto_nacim = $depto_nacim;
+        $this->mun_nacim = $mun_nacim;
+        $this->direccion_corresp = $direccion_corresp;
+        $this->pais_corresp = $pais_corresp;
+        $this->depto_corresp = $depto_corresp;
+        $this->mun_corresp = $mun_corresp;
+        $this->telefono = $telefono;
+        $this->email = $email;
+        $this->ultm_grd_aprob = $ultm_grd_aprob;
+        $this->titulo_obtenido = $titulo_obtenido;
+        $this->fecha_grado = $fecha_grado;
+        $this->fecha_dilig = $fecha_dilig;
+        $this->ciudad_dilig = $ciudad_dilig;
+        $this->observaciones = $observaciones;
     }
+
+
 	
     /**
      * @return mixed

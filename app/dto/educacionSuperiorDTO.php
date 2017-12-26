@@ -14,6 +14,31 @@ class EducacionSuperiorDTO{
 	private $fecha_terminacion;
 	private $num_tarjeta_prof;
 
+
+    /**
+     * Class Constructor
+     * @param    $educacion_superior_id   
+     * @param    $modalidad_academica_id   
+     * @param    $tutor   
+     * @param    $numero_semest_aprob   
+     * @param    $graduado   
+     * @param    $estudio_titulo_obte   
+     * @param    $fecha_terminacion   
+     * @param    $num_tarjeta_prof   
+     */
+    public function __construct($modalidad_academica_id, $tutor, $numero_semest_aprob, $graduado, $estudio_titulo_obte, $fecha_terminacion, $num_tarjeta_prof){
+        $this->educacion_superior_id = '';
+        $this->modalidad_academica_id = $modalidad_academica_id;
+        $this->tutor = $tutor;
+        $this->numero_semest_aprob = $numero_semest_aprob;
+        $this->graduado = $graduado;
+        $this->estudio_titulo_obte = $estudio_titulo_obte;
+        $this->fecha_terminacion = $fecha_terminacion;
+        $this->num_tarjeta_prof = $num_tarjeta_prof;
+    }
+
+
+
     /**
      * @return mixed
      */

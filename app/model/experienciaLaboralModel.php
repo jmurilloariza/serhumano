@@ -16,6 +16,9 @@ class ExperienciaLaboralModel{
 	public function registrarExperienciaLaboral($experienciaLaboralDTO){
 		return $this->experienciaLaboralDAO->registrarExperienciaLaboral($experienciaLaboralDTO);
 	}
+
+	public function listarExperienciasLaboralesTutor($tutorDTO){
+	    return $this->experienciaLaboralDAO->listarExperienciasLaboralesTutor($tutorDTO);
+    }
 }
 
- ?>

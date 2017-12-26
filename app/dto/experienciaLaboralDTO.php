@@ -9,8 +9,8 @@ class ExperienciaLaboralDTO {
     private $empresa_entidad;
     private $tipo;
     private $pais;
-    private $departamento;
-    private $municipio;
+    private $depto;
+    private $mun;
     private $correo_entidad;
     private $telefono;
     private $fecha_ingreso;
@@ -20,9 +20,46 @@ class ExperienciaLaboralDTO {
     private $direccion;
     private $estado_contrato;
 
-    public function __construct(){
 
+    /**
+     * Class Constructor
+     * @param    $tutor   
+     * @param    $empresa_entidad   
+     * @param    $tipo   
+     * @param    $pais   
+     * @param    $depto
+     * @param    $mun
+     * @param    $correo_entidad   
+     * @param    $telefono   
+     * @param    $fecha_ingreso   
+     * @param    $fecha_retiro   
+     * @param    $cargo_contratado   
+     * @param    $dependencia   
+     * @param    $direccion   
+     * @param    $estado_contrato   
+     */
+    public function __construct($tutor = '', $empresa_entidad = '', $tipo = '', $pais = '', $depto = '',
+                                $mun = '', $correo_entidad = '', $telefono = '', $fecha_ingreso = '',
+                                $fecha_retiro = '', $cargo_contratado = '', $dependencia = '', $direccion = '',
+                                $estado_contrato = ''){
+        $this->experiencia_id = '';
+        $this->tutor = $tutor;
+        $this->empresa_entidad = $empresa_entidad;
+        $this->tipo = $tipo;
+        $this->pais = $pais;
+        $this->depto = $depto;
+        $this->mun = $mun;
+        $this->correo_entidad = $correo_entidad;
+        $this->telefono = $telefono;
+        $this->fecha_ingreso = $fecha_ingreso;
+        $this->fecha_retiro = $fecha_retiro;
+        $this->cargo_contratado = $cargo_contratado;
+        $this->dependencia = $dependencia;
+        $this->direccion = $direccion;
+        $this->estado_contrato = $estado_contrato;
     }
+
+
 
     /**
      * @return mixed
@@ -127,19 +164,19 @@ class ExperienciaLaboralDTO {
     /**
      * @return mixed
      */
-    public function getDepartamento()
+    public function getDepto()
     {
-        return $this->departamento;
+        return $this->depto;
     }
 
     /**
-     * @param mixed $departamento
+     * @param mixed $depto
      *
      * @return self
      */
-    public function setDepartamento($departamento)
+    public function setDepto($depto)
     {
-        $this->departamento = $departamento;
+        $this->depto = $depto;
 
         return $this;
     }
@@ -147,19 +184,19 @@ class ExperienciaLaboralDTO {
     /**
      * @return mixed
      */
-    public function getMunicipio()
+    public function getMun()
     {
-        return $this->municipio;
+        return $this->mun;
     }
 
     /**
-     * @param mixed $municipio
+     * @param mixed $mun
      *
      * @return self
      */
-    public function setMunicipio($municipio)
+    public function setMun($mun)
     {
-        $this->municipio = $municipio;
+        $this->mun = $mun;
 
         return $this;
     }

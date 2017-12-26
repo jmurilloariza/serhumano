@@ -16,6 +16,10 @@ class EducacionSuperiorModel{
 	public function registrarEducacionSuperior($educacionSuperiorDTO){
 		return $this->educacionSuperiorDAO->registrarEducacionSuperior($educacionSuperiorDTO);
 	}
+
+	public function listarEstudiosSuperioresTutor($tutorDTO){
+	    return $this->educacionSuperiorDAO->listarEstudiosSuperioresTutor($tutorDTO);
+    }
 }
 
  ?>

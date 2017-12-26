@@ -1,21 +1,22 @@
 <?php 
 
-require 'app/dao/modalidadAcademicaDAO.php';
+require_once 'app/dao/modalidadAcademicaDAO.php';
 
-/**
-* 
-*/
-class ModalidadAcademicaModel{
+class ModalidadAcademicaModel {
 	
 	private $modalidadAcademicaDAO;
 
-	function __construct(){
+	public function __construct(){
 		$this->modalidadAcademicaDAO = new ModalidadAcademicaDAO();
 	}
 
 	public function registrarModalidadAcademica($modalidadAcademicaDTO){
-		return $this->modalidadAcademicaDAO->registrarModalidadAcademica($modalidadAcademicaDTO);
+		return json_encode($this->modalidadAcademicaDAO->registrarModalidadAcademica($modalidadAcademicaDTO));
 	}
+
+	public function listarModalidadesAcademicas(){
+	    return json_encode($this->modalidadAcademicaDAO->listarModalidadesAcademicas());
+    }
 
 }
 

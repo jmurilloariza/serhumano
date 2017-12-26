@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+require 'app/model/modalidadAcademicaModel.php';
 
 /**
 * 
@@ -6,9 +8,11 @@
 class ControllerView{
 
 	private $folderViews;
+	private $modalidadAcademicaModel;
 	
 	function __construct(){
 		$this->folderViews = 'public/';
+		$this->modalidadAcademicaModel = new ModalidadAcademicaModel();
 	}
 
 	function getView ($fileView) {
@@ -43,6 +47,12 @@ class ControllerView{
 		$view = $this->insert($view, '{{header}}', $quickAccess);
 		return $view;
 	}
+
+	public function listarModalidadesAcademicas(){
+	    return $this->modalidadAcademicaModel->listarModalidadesAcademicas();
+    }
+
+
 
 }
 
