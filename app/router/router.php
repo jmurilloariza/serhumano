@@ -4,6 +4,7 @@ require 'vendor/autoload.php';
 require 'app/controller/controllerView.php';
 require 'app/controller/alumnoController.php';
 require 'app/controller/matriculaController.php';
+require 'app/controller/tutorController.php';
 
 use Phroute\Phroute\RouteCollector;
 
@@ -16,11 +17,13 @@ class Router{
 	private $alumnoController;
 	private $matriculaController;
 	private $controllerView;
+	private $tutorController;
 
 	function __construct() {
 		$this->controllerView = new ControllerView();
 		$this->alumnoController = new AlumnoController();
 		$this->matriculaController = new MatriculaController();
+		$this->tutorController = new TutorController();
 	}	
 
 	public function router(){
@@ -61,7 +64,7 @@ class Router{
 
 		$router->post('/matricula/registrarMatricula', function(){
 			$array = array();
-			$array['rta'] = 'Registro Exitoso';
+			$array['rta'] = 'Registro Matricula Exitoso';
 			
 			$res_reg_matricula = $this->matriculaController->registrarMatricula($_POST['alumno_id'],$_POST['institucion_id'],1,$_POST['jornada'],$_POST['grado'],$_POST['grupo_curso'],$_POST['subsidiado'],$_POST['repitente'],$_POST['nie'],$_POST['saaa'],$_POST['cafaa'],$_POST['zra'],$_POST['amcf'],$_POST['bvfp'],$_POST['bhdmcf'],$_POST['bhn'],$_POST['pvc'],$_POST['ume'],$_POST['ude'],$_POST['sector_privado'],$_POST['pom'],$_POST['etnia'],$_POST['resguardo'],$_POST['sisben'],$_POST['direccion_residencia'],$_POST['telefono'],$_POST['lrm'],$_POST['lrd'],$_POST['estrato'],$_POST['anos_cumplidos'],$_POST['anexo_certif_ante']);
 
@@ -70,10 +73,10 @@ class Router{
 
 		$router->post('/matricula/registrarHojaVida', function(){
 			$array = array();
-			$array['rta'] = 'Registro Exitoso';
+			$array['rta'] = 'Registro Hoja de vida Exitoso';
 			
-			$res_reg_HV = $this->matriculaController->registrarMatricula($_POST['nombres'],$_POST['apellido1'],$_POST['apellido2'],$_POST['tipo_doc'],$_POST['numero'],$_POST['sexo'],$_POST['nacionalidad'],$_POST['lbrta_mil_clase'],$_POST['num_lbrta_mil'],$_POST['dm, $fecha_nacim'],$_POST['pais_nacim'],$_POST['depto_nacim'],$_POST['mun_nacim'],$_POST['direccion_corresp'],$_POST['pais_corresp'],$_POST['depto_corres'],$_POST['mun_corresp'],$_POST['telefono'],$_POST['email'],$_POST['ultm_grd_aprob'],$_POST['titulo_obtenido'],$_POST['fecha_grado'],$_POST['modalidad_academica_i'],$_POST['numero_semest_aprob'],$_POST['graduado'],$_POST['estudio_titulo_obte'],$_POST['fecha_terminacion'],$_POST['num_tarjeta_prof'],$_POST['empresa_entidad'],$_POST['tipo'],$_POST['pais'],$_POST['departamento'],$_POST['municipio'],$_POST['correo_entidad'],$_POST['telefono'],$_POST['fecha_ingreso'],$_POST['fecha_retiro'],$_POST['cargo_contratado'],$_POST['dependencia'],$_POST['direccion'],$_POST['estado_contrato']);
-
+			$res_reg_HV = $this->tutorController->registrarHojaDeVida($_POST['nombres'],$_POST['apellido1'],$_POST['apellido2'],$_POST['tipo_doc'],$_POST['numero'],$_POST['sexo'],$_POST['nacionalidad'],$_POST['lbrta_mil_clase'],$_POST['num_lbrta_mil'],$_POST['dm'],$_POST['fecha_nacim'],$_POST['pais_nacim'],$_POST['depto_nacim'],$_POST['mun_nacim'],$_POST['direccion_corresp'],$_POST['pais_corresp'],$_POST['depto_corresp'],$_POST['mun_corresp'],$_POST['telefono'],$_POST['email'],$_POST['ultm_grd_aprob'],$_POST['titulo_obtenido'],$_POST['fecha_grado'],$_POST['fecha_diligenciamiento'],$_POST['observacion'],$_POST['ciudad_diligenciamiento'],$_POST['experiencias_laborales'],$_POST['educaciones_superiores']);
+			echo $res_reg_HV;
 			return  json_encode($array);
 		});
 
@@ -88,6 +91,18 @@ class Router{
 		$router->get('/login', function(){
 			return $this->controllerView->showView('index.html');
 		}, ['before' => 'auth']);
+
+		$router->get('/hojaDeVida', function (){			
+			return $this->controllerView->showView('contenido/docente/hojaDeVida.html');
+		});
+
+		$router->get('/registroEstudiante', function (){			
+			return $this->controllerView->showView('contenido/docente/registroEstudiante.html');
+		});
+
+		$router->get('/matricula6A', function (){			
+			return $this->controllerView->showView('contenido/formato_matricula.html');
+		});
 
 		$router->get('/', function() {
 		    return $this->controllerView->showView('home.html');
@@ -104,4 +119,5 @@ class Router{
 	}
 }
 
- ?>
+?>
+

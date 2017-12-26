@@ -2,7 +2,6 @@
     overflow: hidden;
     padding: 15% 2rem 2rem 2rem;    
 }
-
 .m-login.m-login--1.m-login--singin .m-login__signin {
     display: block;
     box-shadow: 0 0 2px rgba(43, 145, 126, 1), 0 0 25px rgba(43, 145, 126, 1), 0 0 5px rgba(43, 145, 126, 1);

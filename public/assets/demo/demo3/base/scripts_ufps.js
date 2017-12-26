@@ -74,15 +74,6 @@ function PreviewImage(id_input, preview) {
      });        
 }
 
-function registroHojaDeVida(){
-    var x = document.forms["myForm"];
-
-    for (var i = 0; i < x.length; i++) {
-        console.log(x[i].value);
-    }
-    
-    return false;
-}
 
 function armarInformacion(data){
     var informacion="";
@@ -96,6 +87,75 @@ function armarInformacion(data){
     return informacion;
 }
 
+function armarInformacionHV(data){
+    var informacion="";
+    var cont_experiencias_laborales=1;    
+    var cont_educaciones_superiores=1;
+    var experiencias_laborales = [];
+    var educaciones_superiores = [];    
+    for (var i = 0; i < data.length-1; i++) {        
+        if(i==0){
+            informacion+=data[i].name+"="+data[i].value;
+        }else{
+
+            if(data[i].name=='fecha_mes_grado'){
+                informacion+="&fecha_grado="+data[i+1].value+"-"+data[i].value+"-1"                
+                i++;
+            }else if (data[i].name=='tipo_doc' ||
+                data[i].name=='sexo'||
+                data[i].name=='lbrta_mil_clase' ||
+                data[i].name=='ultm_grd_aprob') {
+
+                    informacion+="&"+data[i].name+"="+$('input:radio[name='+data[i].name+']:checked').val();
+
+                }else if(data[i].name.includes("modalidad_academica_id_")){
+                                        
+                    educaciones_superiores.push({'modalidad_academica_id':data[i].value,
+                        'numero_semest_aprob':data[i+1].value,
+                        'graduado':$('input:radio[name=graduado_'+cont_educaciones_superiores+']:checked').val(),
+                        'estudio_titulo_obte':data[i+4].value,
+                        'fecha_terminacion':data[i+6].value+"-"+data[i+5].value+"-1",
+                        'num_tarjeta_prof':data[i+7].value});
+                    cont_educaciones_superiores++;
+                    i+=7;            
+
+                }else if(data[i].name.includes("estado_contrato_")){
+                    
+                    experiencias_laborales.push({'empresa_entidad':data[i+1].value,
+                        'tipo':$('input:radio[name=tipo_'+cont_experiencias_laborales+']:checked').val(),
+                        'pais':data[i+4].value,
+                        'departamento':data[i+5].value,
+                        'municipio':data[i+6].value,
+                        'correo_entidad':data[i+7].value,
+                        'telefono_entidad':data[i+8].value,
+                        'fecha_ingreso':data[i+9].value,
+                        'fecha_retiro':data[i+10].value,
+                        'cargo_contratado':data[i+11].value,
+                        'dependencia':data[i+12].value,
+                        'direccion':data[i+13].value,
+                        'estado_contrato':data[i].value});                
+                    cont_experiencias_laborales++;
+                    i+=13;
+
+            }else{
+                informacion+="&"+data[i].name+"="+data[i].value;    
+            }
+        }
+    }
+
+for (var i = 0; i < educaciones_superiores.length; i++) {
+    console.log(educaciones_superiores[i].estudio_titulo_obte+" Soy stick");
+}
+var x= JSON.stringify(experiencias_laborales);
+var y= JSON.stringify(educaciones_superiores);
+console.log(x);
+console.log(y);
+    
+    informacion+="&"+'experiencias_laborales'+"="+x;
+    informacion+="&"+'educaciones_superiores'+"="+y;
+
+    return informacion;
+}
 
 function registrarEstudiante(){
     var formulario = document.forms["myForm"];
@@ -111,7 +171,16 @@ function registrarMatricula(){
     var informacion="";
     informacion = armarInformacion(formulario);    
     console.log(informacion);
-    ajax('matricula//registrarMatricula', informacion, 'POST');    
+    ajax('matricula/registrarMatricula', informacion, 'POST');    
+    return false;
+}
+
+function registroHojaDeVida(){   
+    var formulario = document.forms["myForm"];
+    var informacion="";
+    informacion = armarInformacionHV(formulario);    
+    console.log(informacion);    
+    ajax('matricula/registrarHojaVida', informacion, 'POST');    
     return false;
 }
 
