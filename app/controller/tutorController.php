@@ -83,23 +83,26 @@ class TutorController {
             return 'Ha ocurido un error en el registro de los datos personales';
         }
 
-        $i = 1;
-        foreach ($educaciones_superiores as $edu) {
-            $resp = $this->registrarEducacionSuperior($edu['modalidad_academica_id'], $id_tutor,
-                $edu['numero_semest_aprob'], $edu['graduado'], $edu['estudio_titulo_obte'],
-                $edu['fecha_terminacion'], $i.'');
+        $educaciones = json_decode($$educaciones_superiores);
+
+        foreach ($educaciones as $edu) {
+            $resp = $this->registrarEducacionSuperior($edu->modalidad_academica_id, $id_tutor,
+                $edu->numero_semest_aprob, $edu->graduado, $edu->estudio_titulo_obte,
+                $edu->fecha_terminacion, $edu->num_tarjeta_prof);
 
             if(!is_numeric($resp) || $resp == 1){
                 return 'Ha ocurrido un error en el registro de los datos de educacion superior';
             }
-            $i++;
+
         }
 
-        foreach ($experiencias_laborales as $exp) {
-            $resp = $this->registrarExperienciaLaboral($id_tutor, $exp['empresa_entidad'], $exp['tipo'],
-                $exp['pais'], $exp['departamento'], $exp['municipio'], $exp['correo_entidad'],
-                $exp['telefono_entidad'], $exp['fecha_ingreso'], $exp['fecha_retiro'],
-                $exp['cargo_contratado'], $exp['dependencia'], $exp['direccion'], $exp['estado_contrato']);
+        $experiencias = json_decode($experiencias_laborales);
+
+        foreach ($experiencias as $exp) {
+            $resp = $this->registrarExperienciaLaboral($id_tutor, $exp->empresa_entidad, $exp->tipo,
+                $exp->pais, $exp->departamento, $exp->municipio, $exp->correo_entidad,
+                $exp->telefono_entidad, $exp->fecha_ingreso, $exp->fecha_retiro,
+                $exp->cargo_contratado, $exp->dependencia, $exp->direccion, $exp->estado_contrato);
 
             if(!is_numeric($resp) || $resp == 1){
                 return 'Ha ocurrido un error en el registro de los datos experiencia laboral';
@@ -169,7 +172,7 @@ class TutorController {
             $nacionalidad, $lbrta_mil_clase, $num_lbrta_mil, $dm, $fecha_nacim,
             $pais_nacim, $depto_nacim, $mun_nacim, $direccion_corresp, $pais_corresp,
             $depto_corresp, $mun_corresp, $telefono, $email, $ultm_grd_aprob,
-            $titulo_obtenido, $fecha_grado, $fecha_dilig, $ciudad_dilig, $observaciones){
+            $titulo_obtenido, $fecha_grado, $fecha_dilig, $observaciones, $ciudad_dilig){
 
         if(!Util::validarString([$nombres, $apellido1, $tipo_doc, $numero, $sexo, $pais_nacim,
                 $depto_nacim, $mun_nacim, $direccion_corresp, $pais_corresp, $depto_corresp,
