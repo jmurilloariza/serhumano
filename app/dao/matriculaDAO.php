@@ -104,7 +104,7 @@ class MatriculaDAO
 				return $jsondata;
 				
 			}
-			$jsondata['data'] = NULL;
+			$jsondata['data'] = "No existe matricula asociada al alumno";
 			$jsondata['respuesta'] = Respuesta::get(0);
 			//var_dump($jsondata);
 			return $jsondata;
@@ -112,7 +112,7 @@ class MatriculaDAO
 		} catch (PDOException $e) {
 			$jsondata['respuesta'] = Respuesta::get(109);
 			$jsondata['data'] = $e->getMessage();
-			var_dump($jsondata);
+			//var_dump($jsondata);
 			return $jsondata;
 			
 		}

@@ -103,8 +103,11 @@ class MatriculaController
 			$alumnoDTO->setNumero_documento($numero_documento);
 			$jsondata['alumno'] = $this->alumnoModel->consultarAlumno($alumnoDTO);
 			
-			var_dump($jsondata);
+			//var_dump($jsondata);
 		}
+
+		return json_encode($jsondata);
+	
 
 	}
 

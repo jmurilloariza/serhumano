@@ -76,15 +76,15 @@ class AlumnoDAO
   				$alumno['alumno_id'] = $alumnoDTO->getAlumno_id();
   				$alumno['tipo_documento'] = $alumnoDTO->getTipo_documento();
   				$alumno['numero_documento'] = $alumnoDTO->getNumero_documento();
-  				$alumno['lugar_nac_mun'] = $alumnoDTO->getLugar_exp_mun();
-  				$alumno['lugar_exp_depto'] = $alumnoDTO->getLugar_nac_depto();
+  				$alumno['lugar_exp_mun'] = $alumnoDTO->getLugar_exp_mun();
+  				$alumno['lugar_exp_depto'] = $alumnoDTO->getLugar_exp_depto();
   				$alumno['apellido_1'] = $alumnoDTO->getApellido_1();
   				$alumno['apellido_2'] = $alumnoDTO->getApellido_2();
   				$alumno['nombre_1'] = $alumnoDTO->getNombre_1();
   				$alumno['nombre_2'] = $alumnoDTO->getNombre_2();
   				$alumno['fecha_nac'] = $alumnoDTO->getFecha_nac();
-  				$alumno['lugar_nac_mun'] = $alumnoDTO->getLugar_exp_mun();
-  				$alumno['lugar_exp_depto'] = $alumnoDTO->getLugar_nac_depto();
+  				$alumno['lugar_nac_mun'] = $alumnoDTO->getLugar_nac_mun();
+  				$alumno['lugar_nac_depto'] = $alumnoDTO->getLugar_nac_depto();
   				$alumno['genero'] = $alumnoDTO->getGenero();
   				$alumno['discapacidad'] = $alumnoDTO->getDiscapacidad();
   				$alumno['cap_excepcionales'] = $alumnoDTO->getCap_excepcionales();
@@ -97,6 +97,7 @@ class AlumnoDAO
 			}
 
 				$jsondata['respuesta'] = Respuesta::get(0);
+				$jsondata['data'] = NULL;
 				return $jsondata;
 			
 			} catch ( PDOException  $e ) {

@@ -38,18 +38,17 @@ class CargaDAO
 			 	}
 			 	$jsondata['respuesta'] = Respuesta::get(2);
 				$jsondata['data'] = $departamentos;
-				echo json_decode($jsondata);
-				return;
-				
+				return json_encode($jsondata);
 			}
 			$jsondata['respuesta'] = Respuesta::get(0);
 			$jsondata['data'] = NULL;
-			echo json_decode($jsondata);
-			return;	
+			return json_encode($jsondata);
+				
 			
 		} catch ( PDOException  $e ) {
-			echo $e->getMessage();
-
+			$jsondata['respuesta'] = Respuesta::get(109);
+			$jsondata['data'] = $e->getMessage();
+			return json_encode($jsondata);
 		}	
 	}
 
@@ -64,7 +63,7 @@ class CargaDAO
 			$prepared = $db->prepare($statement);
 			
 			$prepared->execute();
-			
+			$jsondata = array();
 			if($prepared->rowCount()>0){
 				//Se obtuvieron los departamentos
 				$i=0;
@@ -87,11 +86,19 @@ class CargaDAO
 						$i++;
 					
 			 	}
-				var_dump($grupoMun);
+
+			 	$jsondata['respuesta'] = Respuesta::get(2);
+			 	$jsondata['data'] = $grupoMun;
+				return json_encode($jsondata);
 			}
+				$jsondata['respuesta'] = Respuesta::get(0);
+				$jsondata['data'] = NULL;
+				return json_encode($jsondata);
 			
 		} catch ( PDOException  $e ) {
-			echo $e->getMessage();
+			$jsondata['respuesta'] = Respuesta::get(109);
+			$jsondata['data'] = $e->getMessage();
+			return json_encode($jsondata);
 
 		}	
 	}

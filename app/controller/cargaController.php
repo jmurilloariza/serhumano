@@ -3,6 +3,7 @@
 /**
 * 
 */
+require_once 'app/model/cargaModel.php';
 class CargaController 
 {
 	private $cargaModel;
@@ -14,13 +15,13 @@ class CargaController
 
 	public function listarDepartamentos()
 	{
-		return $this->$cargaModel->listarDepartamentos();
+		return $this->cargaModel->listarDepartamentos();
 	}
-
 
 	public function listarMunicipios()
 	{
-		return $this->$cargaModel->listarMunicipios();
+		return $this->cargaModel->listarMunicipios();
+	}
 	
 
 }

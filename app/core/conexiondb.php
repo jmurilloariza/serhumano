@@ -20,7 +20,7 @@ class DB {
 				self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
 				self::$instance->query('SET NAMES utf8');
 				self::$instance->query('SET CHARACTER SET utf8');
-				echo "instancio<br>";
+				
 			} catch(PDOException $error) {
 				echo $error->getMessage();
 			}
